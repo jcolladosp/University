@@ -1,7 +1,7 @@
-# ETSINF_2
+# University Code	
 
-## Informatics Engineering (Second Year)
-Homework and projects done in the  subjects 
+## Computer Science (UPV)
+Homework and projects done in the subjects, related with programming.
 
 Under MIT License.
 

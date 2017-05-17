@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.RangeSlider?>
+
+<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCompScreenController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="517.0">
+               <children>
+                  <Label text="Categories:" />
+                  <ComboBox fx:id="comboBox" onAction="#onCombo" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <HBox fx:id="hbox_alert" alignment="CENTER" prefHeight="22.0" prefWidth="121.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/error.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Select a category">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox fx:id="hbox_lateral" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="componentTable" prefHeight="407.0" prefWidth="469.0" HBox.hgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="descriptionCol" editable="false" minWidth="300.0" prefWidth="300.0" text="Component" />
+                        <TableColumn fx:id="stockCol" editable="false" maxWidth="87.0" minWidth="61.0" prefWidth="61.0" resizable="false" text="Stock" />
+                        <TableColumn fx:id="priceCol" editable="false" maxWidth="69.0" minWidth="69.0" prefWidth="69.0" resizable="false" text="Price in €" />
+                     </columns>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     
+                     
+                  </TableView>
+                  <VBox alignment="TOP_CENTER" prefHeight="225.0" prefWidth="216.0" spacing="10.0" HBox.hgrow="NEVER">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="35.0" text="Name">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="166.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="164.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="75.0" text="Min. price">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="minField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" />
+                              <Label prefHeight="25.0" prefWidth="6.0" text="€" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="75.0" text="Max. price">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="maxField" prefHeight="30.0" prefWidth="50.0" />
+                              <Label prefHeight="25.0" prefWidth="6.0" text="€" />
+                           </children>
+                        </HBox>
+                        <RangeSlider fx:id="range_slider" />
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox fx:id="stockBox" mnemonicParsing="false" onAction="#onAvailable" prefHeight="32.0" prefWidth="130.0" text="Products in stock">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <Button fx:id="filterButton" graphicTextGap="6.0" mnemonicParsing="false" onAction="#onFilter" prefHeight="35.0" prefWidth="143.0" text="Filter products">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="returnBut" graphicTextGap="6.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="35.0" prefWidth="143.0" text="Go back">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="addBut" defaultButton="true" graphicTextGap="6.0" mnemonicParsing="false" onAction="#onAdd" prefHeight="40.0" prefWidth="143.0" text="Add component">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Button>
+                        <HBox fx:id="hbox_added" alignment="CENTER" visible="false">
+                           <children>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/plus.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Product added.">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

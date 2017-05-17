@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pc>
+    <list>
+        <description>w.digital hd 6tb 3.5 wd60efrx sata3 64mb red nas</description>
+        <price>250.0</price>
+        <stock>148</stock>
+        <category>HDD</category>
+    </list>
+    <list>
+        <description>modulo ddr4 4x4gb pc2133 kingston hyperx predator</description>
+        <price>114.88</price>
+        <stock>1</stock>
+        <category>RAM</category>
+    </list>
+    <list>
+        <description>msi placa base a78m e45n v2 matx fm2</description>
+        <price>52.73</price>
+        <stock>28</stock>
+        <category>MOTHERBOARD</category>
+    </list>
+    <list>
+        <description>intel. core i5 4460 3.20ghz 1150 box</description>
+        <price>177.27</price>
+        <stock>26</stock>
+        <category>CPU</category>
+    </list>
+    <list>
+        <description>cooler master mastercase 5pro atx usb3.0 gaming</description>
+        <price>141.07</price>
+        <stock>32</stock>
+        <category>CASE</category>
+    </list>
+    <list>
+        <description>msi gtx980ti gddr5 6gb 384bits dvi+hdmi+3dp gaming</description>
+        <price>702.56</price>
+        <stock>1</stock>
+        <category>GPU</category>
+    </list>
+    <list>
+        <description>lg 23.6 24m37h.b led 5ms 1920x1080 hdmi 200cd vga</description>
+        <price>119.92</price>
+        <stock>47</stock>
+        <category>SCREEN</category>
+    </list>
+    <list>
+        <description>woxter altavoces big bass 95 negro 2.0</description>
+        <price>22.81</price>
+        <stock>21</stock>
+        <category>SPEAKER</category>
+    </list>
+    <list>
+        <description>steelseries teclado mecanico apex m800 iluminado</description>
+        <price>197.19</price>
+        <stock>1</stock>
+        <category>KEYBOARD</category>
+    </list>
+</pc>

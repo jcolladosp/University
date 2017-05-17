@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ImpresoraCP()
+comment0.text=Crea\ una\ nueva\ impresora
+comment1.params=doc
+comment1.target=void\ guardarTrabajo(Documento)
+comment1.text=\ Guarda\ un\ trabajo\ en\ la\ cola\ de\ impresion\r\n\ @param\ doc\ \ \ Documento\ a\ imprimir\r\n
+comment2.params=
+comment2.target=boolean\ hayTrabajos()
+comment2.text=\ Consulta\ si\ hay\ trabajos\ a\ imprimir\ en\ la\ cola\ de\ impresion\r\n\ @return\ boolean\ que\ indica\ si\ hay\ trabajos\ pendientes\r\n
+comment3.params=
+comment3.target=Documento\ siguienteTrabajo()
+comment3.text=\ SII\ hayTrabajos()\:\ consulta\ el\ siguiente\ trabajo\ a\ imprimir\r\n\ @return\ Siguiente\ documento\ a\ imprimir\r\n
+comment4.params=
+comment4.target=int\ imprimirSiguiente()
+comment4.text=\ SII\ hayTrabajos()\:\ elimina\ de\ la\ cola\ de\ impresion\ el\ siguiente\r\n\ trabajo\ a\ imprimir.\r\n\ @return\ Duracion\ de\ la\ impresion\ del\ siguiente\ trabajo\ (en\ seg.)\r\n
+numComments=5

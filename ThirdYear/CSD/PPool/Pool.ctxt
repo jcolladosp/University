@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=log0
+comment0.target=void\ make(Log)
+comment1.params=id
+comment1.target=long\ begin(int)
+comment2.params=id
+comment2.target=void\ end(int)
+comment3.params=id
+comment3.target=long\ kidSwims(int)
+comment4.params=id
+comment4.target=long\ kidRests(int)
+comment5.params=id
+comment5.target=long\ instructorSwims(int)
+comment6.params=id
+comment6.target=long\ instructorRests(int)
+numComments=7

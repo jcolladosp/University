@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=java.lang.String\ doubleToString(double)
+comment0.text=\ Convierte\ un\ double\ en\ un\ String\ usando\ dos\ decimales\r\n\ @param\ n\ \ \ \ \ Numero\ real\ a\ convertir\r\n\ @return\ String\ con\ el\ valor\ de\ n\r\n
+comment1.params=
+comment1.target=Documento[]\ generarDocumentos()
+comment1.text=\ Genera\ un\ array\ de\ documentos\ de\ forma\ aleatoria\r\n\ @return\ Array\ de\ documentos\ para\ la\ simulacion\r\n
+comment2.params=imp\ hora
+comment2.target=int\ imprimirSiguienteTrabajo(Impresora,\ int)
+comment2.text=\ Simula\ la\ impresion\ del\ siguiente\ trabajo\ almacenado\ en\r\n\ la\ impresora.\r\n\ @param\ imp\ \ \ Impresora\ utilizada\r\n\ @param\ hora\ \ Hora\ de\ inicio\ de\ la\ impresion\ (en\ seg.)\r\n\ @return\ Duracion\ de\ la\ impresion\ del\ trabajo\ (en\ seg.)\r\n
+comment3.params=docs\ imp
+comment3.target=double\ simulacion(Documento[],\ Impresora)
+comment3.text=\ Simula\ la\ impresion\ de\ los\ documentos\ contenidos\ en\ el\ array.\r\n\ @param\ docs\ \ Array\ de\ documentos\r\n\ @param\ imp\ \ \ Impresora\ utilizada\r\n\ @return\ Tiempo\ de\ espera\ medio\ para\ la\ impresion\r\n
+comment4.params=
+comment4.target=boolean\ testDocumento()
+comment4.text=\ Comprueba\ la\ clase\ Documento\r\n\ @return\ Boolean\ indicando\ si\ se\ supera\ el\ test\r\n
+comment5.params=
+comment5.target=boolean\ testImpresora()
+comment5.text=\ Comprueba\ la\ clase\ ImpresoraCP\r\n\ @return\ Boolean\ indicando\ si\ se\ supera\ el\ test\r\n
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\ Programa\ que\ ejecuta\ la\ simulacion\r\n\ @param\ args\ \ Argumentos\ del\ programa\r\n
+numComments=7

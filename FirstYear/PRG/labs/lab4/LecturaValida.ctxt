@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=tec\ mensaje
+comment0.target=double\ leerDoublePos(java.util.Scanner,\ java.lang.String)
+comment0.text=\n\ Lee\ desde\ un\ Scanner\ y\ devuelve\ un\ valor\ real\ positivo.\n\ @param\ tec\ Scanner\ para\ lectura\ desde\ teclado.\n\ @param\ mensaje\ String\ para\ petici\u00F3n\ de\ valor.\n\ @return\ double,\ real\ positivo\ le\u00EDdo.\n
+comment1.params=tec\ mensaje
+comment1.target=int\ leerInt(java.util.Scanner,\ java.lang.String)
+comment1.text=\n\ Lee\ desde\ un\ Scanner\ y\ devuelve\ un\ valor\ entero.\n\ @param\ tec\ Scanner\ para\ lectura\ desde\ teclado.\n\ @param\ mensaje\ String\ para\ petici\u00F3n\ de\ valor.\n\ @return\ int,\ entero\ le\u00EDdo.\n
+comment2.params=tec\ mensaje\ lInferior\ lSuperior
+comment2.target=int\ leerInt(java.util.Scanner,\ java.lang.String,\ int,\ int)
+comment2.text=\n\ Lee\ desde\ un\ Scanner\ y\ devuelve\ un\ valor\ entero\ en\ el\ intervalo\ [lInferior..lSuperior]\ \n\ tal\ que\ Integer.MIN_VALUE<\=lInferior\ y\ lSuperior<\=Integer.MAX_VALUE.\n\ @param\ tec\ Scanner\ para\ lectura\ desde\ teclado.\n\ @param\ mensaje\ String\ para\ petici\u00F3n\ de\ valor.\n\ @param\ lInferior\ int\ que\ indica\ el\ l\u00EDmite\ inferior\ del\ intervalo\ de\ lectura.\n\ @param\ lSuperior\ int\ que\ indica\ el\ l\u00EDmite\ superior\ del\ intervalo\ de\ lectura.\n\ @return\ int,\ entero\ le\u00EDdo\ en\ el\ intervalo\ [lInferior..lSuperior].\n
+numComments=3

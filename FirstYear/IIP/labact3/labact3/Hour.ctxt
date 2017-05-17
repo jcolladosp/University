@@ -1,0 +1,32 @@
+#BlueJ class context
+comment0.params=hh\ mm
+comment0.target=Hour(int,\ int)
+comment0.text=\ Hour\ corresponding\ to\ hh\ hours\ and\ mm\ minutes.\n\ Precondition\:\ 0<\=hh<24,\ 0<\=mm<60\n
+comment1.params=
+comment1.target=Hour()
+comment1.text=\ Current\ UTC\ Hour\ (hours\ and\ minutes)\n
+comment2.params=
+comment2.target=int\ getH()
+comment2.text=Returns\ hour\ from\ current\ Hour\ object
+comment3.params=
+comment3.target=int\ getM()
+comment3.text=Returns\ minutes\ from\ current\ Hour\ object
+comment4.params=hh
+comment4.target=void\ setH(int)
+comment4.text=Modifies\ hour\ of\ current\ Hour\ object
+comment5.params=mm
+comment5.target=void\ setM(int)
+comment5.text=Modifies\ minutes\ of\ current\ Hour\ object
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\ Returns\ current\ Hour\ object\ in\ format\ "hh\:mm"\n
+comment7.params=
+comment7.target=int\ toMinutes()
+comment7.text=\ Returns\ amount\ of\ minutes\ from\ 00\:00\ to\ current\ Hour\ object\n
+comment8.params=o
+comment8.target=boolean\ equals(java.lang.Object)
+comment8.text=\ Returns\ true\ only\ if\ o\ and\ current\ Hour\ object\ represent\ the\ same\ hour\n
+comment9.params=hour
+comment9.target=int\ compareTo(Hour)
+comment9.text=\ Compares\ chronologically\ current\ Hour\ object\ and\ hour;\ result\ is\:\n\ \ \ \ \ \ -\ negative\ when\ current\ Hour\ is\ previous\ to\ hour\n\ \ \ \ \ \ -\ zero\ if\ they\ are\ equal\n\ \ \ \ \ \ -\ positive\ when\ current\ Hour\ is\ posterior\ to\ hour\n
+numComments=10

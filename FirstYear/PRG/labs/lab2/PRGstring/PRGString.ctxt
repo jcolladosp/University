@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=a\ b
+comment0.target=boolean\ isPrefix(java.lang.String,\ java.lang.String)
+comment1.params=a\ b
+comment1.target=boolean\ isSubstring(java.lang.String,\ java.lang.String)
+comment2.params=a
+comment2.target=boolean\ isPalindrome(java.lang.String)
+numComments=3

@@ -1,0 +1,15 @@
+fmod BATTERY-HASKELL is
+    sorts Cell Battery .
+    op o : -> Cell .
+    op + : -> Cell .
+    op - : -> Cell .
+    op nil : -> Battery .
+    op _^_ : Cell Battery -> Battery .
+
+    op consume : Battery -> Battery .
+    var Bt : Battery .
+    eq consume(o ^ Bt) = + ^ Bt .
+    eq consume(+ ^ Bt) = - ^ Bt .
+    eq consume(- ^ Bt) = - ^ consume(Bt) .
+    eq consume(nil) = nil .
+endfm 

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=id
+comment0.target=long\ kidSwims(int)
+comment1.params=id
+comment1.target=long\ kidRests(int)
+comment2.params=id
+comment2.target=long\ instructorSwims(int)
+comment3.params=id
+comment3.target=long\ instructorRests(int)
+numComments=4

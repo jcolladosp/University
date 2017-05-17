@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=titulo\ numPaginas\ envio
+comment0.target=Documento(java.lang.String,\ int,\ int)
+comment0.text=\ Crea\ un\ nuevo\ documento\r\n\ @param\ titulo\ \ \ \ \ \ \ \ Titulo\ del\ documento\r\n\ @param\ numPaginas\ \ \ \ Numero\ de\ paginas\ del\ documento\r\n\ @param\ envio\ \ \ \ \ \ \ \ \ Instante\ de\ envio\ a\ impresion\ (en\ seg.)\r\n
+comment1.params=
+comment1.target=java.lang.String\ getTitulo()
+comment1.text=\ Consultor\ del\ titulo\ del\ documento\r\n\ @return\ Titulo\ del\ documento\ (String)\r\n
+comment2.params=
+comment2.target=int\ getNumPaginas()
+comment2.text=\ Consultor\ del\ numero\ de\ paginas\ del\ documento\r\n\ @return\ Numero\ de\ paginas\ del\ documento\ (int)\r\n
+comment3.params=
+comment3.target=int\ getEnvio()
+comment3.text=\ Consultor\ del\ instante\ de\ envio\ a\ impresion\ del\ documento\r\n\ @return\ Instante\ de\ impresion\ en\ seg.\ del\ documento\ (int)\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\ Devuelve\ una\ descripcion\ (cadena\ de\ texto)\ del\ documento\r\n\ @return\ Descripcion\ del\ documento\ (String)\r\n
+comment5.params=other
+comment5.target=int\ compareTo(Documento)
+numComments=6

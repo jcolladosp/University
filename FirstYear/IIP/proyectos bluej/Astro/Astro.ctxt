@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=Nombre\ Tipo\ Brillo\ Distancia
+comment0.target=Astro(java.lang.String,\ int,\ double,\ double)
+comment1.params=
+comment1.target=Astro()
+comment2.params=
+comment2.target=double\ getBrillo()
+comment3.params=Brillo
+comment3.target=void\ setBrillo(double)
+comment4.params=o
+comment4.target=boolean\ equals(java.lang.Object)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=
+comment6.target=double\ magnitudAbsoluta()
+comment7.params=o
+comment7.target=int\ masBrillante(Astro)
+comment8.params=
+comment8.target=java.lang.String\ visibleCon()
+numComments=9

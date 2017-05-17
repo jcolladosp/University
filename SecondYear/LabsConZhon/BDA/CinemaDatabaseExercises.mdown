@@ -1,0 +1,657 @@
+## EXERCISES CINEMA DATABASE
+
+
+Graphical representation of the “Cine” relational schema
+
+![alt text](http://jcollado.pw/imagenes/bda.png "Graphical schema")
+
+
+### Queries using one single relation
+
+1. *List the code of the countries with some actor in ascending order.*
+
+    ```sql
+    SELECT cod_pais
+    FROM CS_Pais
+    ORDER BY cod_pais 
+    ```
+2. *List the code and the title of the movies released before 1970 which are not based on a book. Sort the movies by the title.*
+
+    ```sql
+    SELECT cod_peli, titulo
+    FROM CS_Pelicula
+    WHERE anyo < 1970
+    AND cod_lib IS null
+    ORDER BY titulo
+    ```
+
+3. *List the code and nameof the actors whichname includes “John”.*
+
+    ```sql
+    SELECT cod_act, nombre
+    FROM CS_Actor
+    WHERE nombre LIKE '%John%'
+    ```
+4. *List the code and title of the movies with a length greater than 120 minutes, released in the 80’s.*    
+
+    ```sql
+    SELECT cod_peli, titulo
+    FROM CS_Pelicula
+    WHERE duracion > 120
+    AND anyo LIKE '%198_%'
+    ```
+
+5. *List the code and title of the movies based on abook, directed by adirector with the last name ‘Pakula’*    
+
+    ```sql
+    SELECT cod_peli, titulo
+    FROM CS_Pelicula
+    WHERE director LIKE '_%Pakula%'
+    AND cod_lib IS NOT null
+    ```
+6. *How many movies are there with a length greater than 120 minutes released in the 80’s?*    
+
+    ```sql
+    SELECT COUNT(*)
+    FROM CS_Pelicula
+    WHERE duracion > 120
+    AND anyo LIKE '%198_%'
+    ```    
+7. *How many movies have been classified in the genres with codes 'BB5', 'GG4', o 'JH6' ?*
+
+    ```sql 
+    SELECT COUNT(*)
+    FROM CS_Clasificacion
+    WHERE COD_GEN = 'BB5'
+    OR COD_GEN = 'GG4'
+    OR COD_GEN = 'JH6'
+    ```
+8. *In which year was published the oldest book ?*
+
+    ```sql 
+    SELECT MIN(anyo)
+    FROM CS_Libro 
+    ```
+9. *What is the average length of the movies released in 1987?*
+
+    ```sql 
+    SELECT AVG(duracion)
+    FROM CS_Pelicula
+    WHERE anyo = '1987'     
+    ```    
+10. *What is the total length of the movies directed by ‘Steven Spielberg’?*   
+
+    ```sql 
+    SELECT SUM(duracion)
+    FROM CS_Pelicula
+    WHERE director = 'Steven Spielberg' 
+    ```
+
+### Queries using more than one relation
+
+11. *List the code and title of the movies in which act an actor with the same name as the movie director (sorted by title).*    
+
+    ```sql 
+    SELECT P.cod_peli, P.titulo
+    FROM CS_Pelicula P, CS_Actua B, CS_Actor A
+    WHERE P.cod_peli = B.cod_peli
+    AND A.cod_act = B.cod_act
+    AND P.director = A.nombre
+    ORDER BY P.titulo 
+    ```
+
+12. *List the code and title of the movies of the genre ‘Comedia’ (sorted by title).*    
+
+    ```sql 
+    SELECT P.cod_peli, P.titulo
+    FROM CS_Pelicula P, CS_Clasificacion C, CS_Genero G
+    WHERE P.cod_peli = C.cod_peli
+    AND C.cod_gen = G.cod_gen 
+    AND G.nombre LIKE 'Comedia'
+    ORDER BY P.titulo
+    ```
+
+13. *List the code and title of the movies based on a book published before 1950.*    
+
+    ```sql 
+    SELECT P.cod_peli, P.titulo
+    FROM CS_Pelicula P, CS_Libro L
+    WHERE P.cod_lib = L.cod_lib
+    AND L.anyo < 1950
+    ```
+
+14. *List the code and name of the countries in which were born the actors acting in movies of the genre ‘Comedia’ (sorted by name).*    
+
+    ```sql 
+    SELECT DISTINCT K.cod_pais, K.nombre
+    FROM CS_Pelicula P, CS_Clasificacion C, CS_Genero G, CS_Pais K, CS_Actua A, CS_Actor L
+    WHERE P.cod_peli = C.cod_peli
+    AND C.cod_gen = G.cod_gen 
+    AND G.nombre LIKE 'Comedia'
+    AND P.cod_peli = A.cod_peli
+    AND A.cod_act = L.cod_act
+    AND L.cod_pais = K.cod_pais
+    ORDER BY K.nombre
+    ```     
+
+### Queries with subqueries
+
+15. *Write again a query for the exercises 11, 12, 13, and 14 using subqueries.*    
+    11. *List the code and title of the movies in which act an actor with the same name as the movie director (sorted by title).*
+        ```sql 
+        SELECT cod_peli, titulo
+        FROM CS_Pelicula P
+        WHERE director IN (SELECT nombre
+                          FROM CS_Actor
+                          WHERE cod_act IN (SELECT cod_act
+                                            FROM CS_actua A
+                                            WHERE A.cod_peli = P.cod_peli))
+                        
+        ORDER BY P.titulo  
+        ``` 
+    
+    12. *List the code and title of the movies of the genre ‘Comedia’ (sorted by title).*
+        ```sql 
+        SELECT cod_peli, titulo
+        FROM CS_Pelicula 
+        WHERE cod_peli IN (SELECT cod_peli
+                              FROM CS_Clasificacion
+                              WHERE cod_gen IN (SELECT cod_gen
+                                                  FROM CS_Genero
+                                                  WHERE nombre LIKE 'Comedia'))
+        ORDER BY titulo 
+        ```
+    
+    13. *List the code and title of the movies based on a book published before 1950.* 
+        ```sql 
+        SELECT cod_peli, titulo
+        FROM CS_Pelicula
+        WHERE cod_lib IN (SELECT cod_lib
+                          FROM CS_libro
+                          WHERE anyo < 1950)
+        ORDER BY titulo                  
+        ```
+    
+    14. *List the code and name of the countries in which were born the actors acting in movies of the genre ‘Comedia’ (sorted by name).*    
+        ```sql 
+        SELECT cod_pais, nombre
+        FROM CS_Pais
+        WHERE cod_pais IN (SELECT cod_pais
+                          FROM CS_Actor
+                          WHERE cod_act IN (SELECT cod_act
+                                            FROM CS_Actua
+                                            WHERE cod_peli IN (SELECT cod_peli
+                                                                FROM CS_Clasificacion
+                                                                WHERE cod_gen IN (SELECT cod_gen
+                                                                                  FROM CS_genero
+                                                                                  WHERE nombre LIKE 'Comedia'))))
+        ORDER BY nombre                  
+        ```
+16. *List the code and name of the actors born before 1950 who perform the role ‘Principal’ in some movie (sorted by name).* 
+
+    ```sql 
+    SELECT cod_act, nombre
+    FROM CS_actor
+    WHERE fecha_nac < '01/01/1950'
+    AND cod_act IN (SELECT cod_act
+                    FROM CS_actua
+                    WHERE papel LIKE 'Principal')
+    ORDER BY nombre 
+    ```
+17. *List the code, title, and author of the books used in some movie released in the 90’s (sorted by title).* 
+
+    ```sql 
+    SELECT cod_lib,titulo,autor
+    FROM CS_Libro
+    WHERE cod_lib IN (SELECT cod_lib
+                      FROM CS_Pelicula
+                      WHERE anyo LIKE '199_')
+    ORDER BY titulo
+    ```
+18. *List the code, title, and author of the books not used in any movie.* 
+
+    ```sql 
+    SELECT cod_lib,titulo,autor
+    FROM CS_Libro
+    WHERE cod_lib NOT IN (SELECT cod_lib
+                          FROM CS_Pelicula
+                          WHERE cod_lib IS NOT NULL)
+    
+    ```
+19. *List the name of the genre (or genres) of the movies in which there is no actor acting (sorted by name).* 
+
+    ```sql 
+    SELECT nombre
+    FROM CS_Genero
+    WHERE cod_gen  IN (SELECT cod_gen
+                          FROM CS_Clasificacion
+                          WHERE cod_peli NOT IN(SELECT cod_peli
+                                                  FROM CS_Actua)
+                          AND cod_peli IS NOT NULL)
+    ORDER BY nombre
+    ```  
+20. *List the title of the books used in some movie with no actors from the country called ‘USA’ (sorted by title).* 
+
+    ```sql 
+    SELECT titulo
+    FROM CS_libro
+    WHERE cod_lib IN (SELECT cod_lib 
+                     FROM CS_Pelicula
+                     WHERE cod_lib IS NOT NULL
+                     AND cod_peli NOT IN (SELECT cod_peli
+                                        FROM CS_Actua
+                                        WHERE cod_act IN (SELECT cod_act
+                                                            FROM CS_Actor
+                                                            WHERE cod_pais IN (SELECT cod_pais
+                                                                                FROM CS_Pais
+                                                                                WHERE nombre LIKE 'USA')))) 
+    ORDER BY titulo
+    
+    ```
+21. *How many movies of the genre ‘Comedia’ are there with only one actor playing the role ‘Secundario’?* 
+
+    ```sql 
+    SELECT COUNT(P.cod_peli)
+    FROM CS_Pelicula P
+    WHERE P.cod_peli IN (SELECT cod_peli
+                      FROM CS_Clasificacion
+                      WHERE cod_gen IN (SELECT cod_gen
+                                        FROM CS_Genero
+                                        WHERE nombre LIKE 'Comedia'))
+    AND 1 = (SELECT COUNT (cod_act)
+            FROM CS_actua A
+            WHERE A.cod_peli = P.cod_peli)
+    ``` 
+22. *List the release year of the first movie in which the actor named ‘Jude Law’ performed the ‘Principal’ role.* 
+
+    ```sql 
+    SELECT MIN(anyo)
+    FROM CS_Pelicula
+    WHERE cod_peli IN (SELECT cod_peli
+                      FROM CS_Actua 
+                      WHERE papel LIKE 'Principal'
+                      AND cod_act IN (SELECT cod_act
+                                      FROM CS_Actor
+                                      WHERE nombre LIKE 'Jude Law'))
+                
+    ```
+23. *List the code and name of the oldest actor (or actors).* 
+
+    ```sql 
+    SELECT cod_act, nombre
+    FROM CS_Actor
+    WHERE fecha_nac <= ALL (SELECT fecha_nac
+                            FROM CS_Actor)
+    
+    ```
+24. *List the code, name, and date of birth of the oldest actor born in 1940.* 
+
+    ```sql 
+    SELECT cod_act, nombre, fecha_nac
+    FROM CS_Actor
+    WHERE fecha_nac <= ALL (SELECT fecha_nac
+                            FROM CS_Actor
+                            WHERE fecha_nac BETWEEN '01/01/1940' AND '31/12/1940')
+    AND fecha_nac BETWEEN '01/01/1940' AND '31/12/1940'   
+    ```
+25. *List the genre (or genres) of the longest movie.* 
+
+    ```sql 
+    SELECT nombre
+    FROM CS_Genero
+    WHERE cod_gen IN (SELECT cod_gen
+                      FROM CS_Clasificacion
+                     WHERE cod_peli IN (SELECT cod_peli
+                                        FROM CS_Pelicula
+                                        WHERE duracion >= ALL (SELECT duracion
+                                                          FROM CS_Pelicula)))
+                                      
+    ```    
+26. *List the code and title of the book used in the movies in which act actors from the country called ‘España’ (sorted by title).* 
+
+    ```sql 
+    SELECT cod_lib, titulo
+    FROM cs_libro
+    WHERE cod_lib IN (
+        SELECT cod_lib
+        FROM cs_pelicula
+        WHERE cod_peli IN (
+            SELECT cod_peli
+            FROM cs_actua
+            WHERE cod_act IN (
+                SELECT cod_act
+                FROM cs_actor
+                WHERE cod_pais IN (
+                    SELECT cod_pais
+                    FROM cs_pais
+                    WHERE nombre = 'España'))))
+     ORDER BY titulo;
+    ```
+27. *List the title of the movies of more than one genre released before 1950 (sorted by title).* 
+
+    ```sql 
+    SELECT P.titulo
+    FROM CS_Pelicula P
+    WHERE anyo < 1950
+    AND 1 < (SELECT COUNT(C.cod_gen)
+            FROM CS_Clasificacion C
+            WHERE C.cod_peli = P.cod_peli)
+    ORDER BY P.titulo
+    ```
+28. *List the number of movies with less than 4 actors.* 
+
+    ```sql 
+    SELECT COUNT(P.cod_peli)
+    FROM CS_Pelicula P
+    WHERE 4 > (SELECT COUNT(cod_act)
+              FROM CS_Actua A
+              WHERE P.cod_peli = A.cod_peli)
+    ```
+29. *List the directors who have directed more than 250 minutes (considering the length of all their movies).* 
+
+    ```sql 
+    SELECT DISTINCT P.director
+    FROM CS_Pelicula P
+    WHERE 250 < (SELECT SUM(duracion)
+              FROM CS_Pelicula A
+              WHERE P.director = A.director)
+    ``` 
+30. *List the year (or years) in which were born more than 3 actors.* 
+
+    ```sql 
+    SELECT DISTINCT EXTRACT(YEAR FROM A.fecha_nac)
+    FROM CS_Actor A
+    WHERE 3 < (SELECT COUNT(B.cod_act)
+               FROM CS_ACTOR B
+              WHERE EXTRACT(YEAR FROM A.fecha_nac) = EXTRACT(YEAR FROM B.fecha_nac))
+    ```
+31. *List the code and name of the youngest actor who has participated in a movie of the genre with code ‘DD8’.* 
+
+    ```sql 
+    SELECT cod_act, nombre
+    FROM CS_Actor 
+    WHERE fecha_nac = (SELECT MAX(fecha_nac)
+                      FROM cs_Actor
+                      WHERE cod_act IN (SELECT cod_act
+                                        FROM cs_Actua
+                                        WHERE cod_peli IN (SELECT cod_peli
+                                                            FROM cs_clasificacion
+                                                            WHERE cod_gen = 'DD8')))
+    ```
+    
+### Queries with universal quantification
+
+32. *List the code and name of the countries with actors such that all the actors from that country were born in the XX century (sorted by name).* 
+
+    ```sql 
+    SELECT P.cod_pais, P.nombre
+    FROM CS_Pais P
+    WHERE NOT EXISTS (SELECT *
+                        FROM CS_Actor A
+                        WHERE EXTRACT(YEAR FROM A.fecha_nac) NOT  BETWEEN 1900 AND 2000
+                        AND A.cod_pais = P.cod_pais)
+    AND EXISTS ( SELECT *
+                FROM cs_actor E
+             WHERE P.cod_pais = E.cod_pais)
+    ORDER BY P.nombre                 
+    ```     
+    
+33. *List the code and name of the actors such that all their roles have been ‘Secundario’. We are only interested in actors who have acted in some movie.* 
+
+
+    ```sql 
+    SELECT A.cod_act, A.nombre
+    FROM CS_Actor A
+    WHERE NOT EXISTS (SELECT *
+                        FROM CS_Actua B
+                        WHERE B.cod_act = A.cod_act
+                        AND B.papel NOT LIKE 'Secundario')
+    AND EXISTS ( SELECT *
+                FROM CS_Actua E
+             WHERE E.cod_act = A.cod_act)
+    ORDER BY A.nombre   
+    ```
+
+34. *List the code and name of the actors who have appeared in all the movies directed by ‘Guy Ritchie’ (only if this director has directed at least one movie).* 
+
+    ```sql 
+    SELECT a.cod_act, a.nombre
+    FROM cs_actor a
+    WHERE EXISTS (SELECT *
+                FROM cs_pelicula
+                 WHERE director = 'Guy Ritchie'
+                AND cod_peli IN (SELECT cod_peli
+                                FROM cs_actua x2
+                                 WHERE x2.cod_act = a.cod_act))
+        AND NOT EXISTS (SELECT *
+                        FROM cs_pelicula p
+                        WHERE cod_peli NOT IN (SELECT cod_peli
+                                                FROM cs_actua x
+                                                WHERE x.cod_act = a.cod_act)
+                         AND p.director = 'Guy Ritchie')        
+    ```
+
+35. *Write a query for the previous problem but using the director named ‘John Steel’.* 
+
+    ```sql 
+    SELECT a.cod_act, a.nombre
+    FROM cs_actor a
+    WHERE EXISTS (SELECT *
+                FROM cs_pelicula
+                 WHERE director = 'John Steel'
+                AND cod_peli IN (SELECT cod_peli
+                                FROM cs_actua x2
+                                 WHERE x2.cod_act = a.cod_act))
+        AND NOT EXISTS (SELECT *
+                        FROM cs_pelicula p
+                        WHERE cod_peli NOT IN (SELECT cod_peli
+                                                FROM cs_actua x
+                                                WHERE x.cod_act = a.cod_act)
+                         AND p.director = 'John Steel')  
+    ```    
+
+36. *List the code and title of the movies with a length shorter than 100 minutes in which all the actors who have acted are from the same country.* 
+
+    ```sql 
+    SELECT P.cod_peli,P.titulo
+    FROM CS_Pelicula P
+    WHERE P.duracion < 100
+    AND p.cod_peli IN (SELECT A.cod_peli
+                      FROM CS_ACTUA A
+                      WHERE A.cod_act  IN (SELECT B.cod_act
+                                            FROM CS_Actor B
+                                            WHERE NOT EXISTS (SELECT *
+                                                                        FROM CS_ACTOR X
+                                                                        WHERE B.cod_pais NOT LIKE X.cod_pais
+                                                                        AND X.cod_act IN (SELECT Z.cod_act
+                                                                                          FROM CS_Actua Z
+                                                                                          WHERE Z.cod_peli = P.cod_peli))))
+    
+    ```       
+
+37. *List the code, title, and year of release of the movies in which some actor has acted, but only if all the actors of that movie were born before 1943.* 
+
+    ```sql 
+    
+    ```        
+38. *List the code and name of all the countries if all the actors from that country have acted in at least one movie with a length greater than 120 minutes (sorted by name).* 
+
+    ```sql 
+    
+    ```     
+
+### Queries with GROUP BY
+
+39. *List the code and title of the book (or books) used in more than one movie. Include also how many movies have been based on that book.* 
+
+    ```sql 
+    SELECT L.cod_lib, L.titulo, COUNT(L.cod_lib)
+    FROM CS_Libro L, CS_Pelicula P
+    WHERE P.cod_lib = L.cod_lib
+    GROUP BY L.cod_lib, L.titulo
+    HAVING COUNT(P.cod_lib) > 1
+    ```
+40. *List for each genre with more than 5 movies, the code and the name of the genre, including the amount of movies of that genre and the average length of all that movies. (sorted by name). You can use the ROUND function.* 
+
+    ```sql 
+    SELECT G.cod_gen, G.nombre,COUNT(C.cod_peli),ROUND(AVG(P.duracion))
+    FROM CS_Genero G, CS_Clasificacion C,CS_Pelicula P
+    WHERE G.cod_gen = C.cod_gen
+    AND P.cod_peli =  C.cod_peli
+    GROUP BY G.cod_gen,G.nombre
+    HAVING  COUNT(C.cod_peli) > 5
+    ```
+41. *List the code and title of the movies released after the 2000 year, and how many genres they have (if they have genre) sorted by title.* 
+
+    ```sql 
+    SELECT P.cod_peli,P.titulo,COUNT(C.cod_gen)
+    FROM CS_Pelicula P, CS_Clasificacion C
+    WHERE P.anyo > 2000
+    AND P.cod_peli = C.cod_peli
+    GROUP BY P.cod_peli,P.titulo
+    ORDER BY P.titulo
+    ```   
+42. *List the directors who have directed two (exactly 2) movies whose name contains the string ‘George’.*
+
+    ```sql 
+    SELECT director
+    FROM CS_Pelicula
+    WHERE director LIKE '%George%'
+    GROUP BY director
+    HAVING COUNT(cod_peli) = 2
+    ``` 
+43. *List for each movie with some actor and classified in one (and only one) genre, the code, title and amount of actors who have acted in that movie.*
+
+    ```sql 
+    SELECT P.cod_peli, P.titulo,COUNT(A.cod_act) 
+    FROM CS_Pelicula P,CS_Clasificacion C, CS_Actua A
+    WHERE P.cod_peli = A.cod_peli
+    AND P.cod_peli = C.cod_peli
+    GROUP BY P.cod_peli,P.titulo
+    HAVING COUNT(DISTINCT C.cod_gen) = 1
+    AND COUNT(A.cod_act) >0
+    ORDER BY P.titulo;
+    ```     
+44. *List the code and name of all the countries with actors, indicating how many actors from that country have acted in at least one movie from the 60’s.*
+
+    ```sql 
+    SELECT X.cod_pais, X.nombre,COUNT(A.cod_act) 
+    FROM CS_Pelicula P,CS_Pais X,CS_Actua A, CS_Actor Z
+    WHERE X.cod_pais = Z.cod_pais
+    AND Z.cod_act = A.cod_act
+    AND A.cod_peli = P.cod_peli
+    AND P.anyo LIKE '196_'
+    GROUP BY X.cod_pais,X.nombre
+    HAVING COUNT(DISTINCT A.cod_act) > 0
+    ``` 
+45. *List the code (or codes) and the genre (or genres) with most movies.*
+
+    ```sql 
+    SELECT G.cod_gen, G.nombre
+    FROM CS_Clasificacion A, CS_Genero G
+    WHERE G.cod_gen = A.cod_gen
+    GROUP BY G.cod_gen, G.nombre
+    HAVING COUNT(DISTINCT A.cod_peli) >= ALL (SELECT COUNT(DISTINCT cod_peli)
+                                              FROM CS_Clasificacion 
+                                              GROUP BY cod_gen)
+
+    ```
+46. *List the code/s, title/s and author/s of the book most used in movies.*
+
+    ```sql 
+    SELECT L.cod_lib,L.titulo,L.autor
+    FROM CS_libro L,CS_Pelicula P
+    WHERE L.cod_lib = P.cod_lib
+    GROUP BY L.cod_lib,L.titulo,L.autor
+    HAVING COUNT (P.cod_peli) >= ALL (SELECT COUNT(cod_peli)
+                                      FROM CS_pelicula
+                                      WHERE cod_lib IS NOT NULL
+                                      GROUP BY cod_lib)
+    ```     
+47. *List the code and name of the country which has most actors who have participated in exactly 2 movies.*
+
+    ```sql 
+    --Not correct
+    SELECT P.cod_pais, P.nombre
+    FROM CS_Pais P,CS_Actor A
+    WHERE P.cod_pais = A.cod_pais
+    GROUP BY P.cod_pais, P.nombre
+    HAVING COUNT(P.cod_pais) >= ALL (SELECT COUNT(B.cod_act)
+                                    FROM CS_ACTOR B,CS_Actua C
+                                    WHERE C.cod_act IS NOT NULL
+                                    GROUP BY B.cod_act
+                                    HAVING COUNT(C.cod_act) = 2)
+    ```     
+48. *List the year (or years) in which more than 3 actors were born, indicating how many actors were born in that year.*
+
+    ```sql 
+    SELECT EXTRACT(YEAR FROM fecha_nac), COUNT(cod_act)
+    FROM CS_Actor
+    GROUP BY EXTRACT(YEAR FROM fecha_nac)
+    HAVING COUNT(cod_act) > 3
+    ```    
+49. *List the code and title of the movies with a length shorter than 100 minutes in which all the actors who have acted are from the same country.*
+
+    ```sql 
+    SELECT P.cod_peli,P.titulo
+    FROM CS_Pelicula P, CS_Actua A, CS_Actor B
+    WHERE duracion < 100
+    AND P.cod_peli = A.cod_peli
+    AND A.cod_act = B.cod_act
+    GROUP BY P.cod_peli,P.titulo
+    HAVING COUNT(DISTINCT B.cod_pais) = 1
+    ```     
+
+### Queries with different joins
+
+
+50. *List for all the countries in the database, the code, name, and amount of actors in each country.*
+
+    ```sql 
+    
+    ``` 
+51. *List the code and the title of all the books in the database published after 1980, and the amount of movies based on each book.*
+
+    ```sql 
+    
+    ```   
+52. *List for all the countries in the database, the code, name and amount of actors from that country who have performed the “Secundario” role in some movie.*
+
+    ```sql 
+    
+    ```   
+53. *List for all the movies in the database longer tan 140 minutes, its code, title, amount of genres and amount of actors acting in that movie.*
+
+    ```sql 
+    
+    ```     
+### Queries with set operations   
+    
+54. *List the years, in ascending order, of all the years in which a book was published or a movie was released. We are only interested in years without the digit 9.*
+
+    ```sql 
+    (SELECT anyo 
+    FROM CS_Libro
+    WHERE anyo IS NOT NULL
+    AND anyo NOT LIKE '%9%')
+    UNION
+    (SELECT anyo 
+    FROM CS_Pelicula
+    WHERE anyo IS NOT NULL
+    AND anyo NOT LIKE '%9%')
+    ORDER BY anyo ASC
+    ```  
+    
+### Other queries   
+
+55. *List the name of the genre (or genres) of the longest movie.*
+
+    ```sql 
+    
+    ```     
+56. *List, for each actor born before 1948 who has acted in 2 or more movies in any role, the code, the name and the date of birth, indicating in how many movies he/she has performed the ‘Principal’ role.*
+
+    ```sql 
+    
+    ```     
+    

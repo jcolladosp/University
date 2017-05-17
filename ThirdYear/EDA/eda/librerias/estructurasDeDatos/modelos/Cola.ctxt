@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=e
+comment0.target=void\ encolar(java.lang.Object)
+comment0.text=inserta\ el\ Elemento\ e\ en\ una\ Cola,\ o\ lo\ situa\ en\ su\ final\ *
+comment1.params=
+comment1.target=java.lang.Object\ desencolar()
+comment1.text=\ SII\ \!esVacia()\:\ \r\nobtiene\ y\ elimina\ de\ una\ Cola\ el\ Elemento\ que\ ocupa\ su\ principio\ *
+comment2.params=
+comment2.target=java.lang.Object\ primero()
+comment2.text=\ SII\ \!esVacia()\:\ obtiene\ el\ Elemento\ que\ ocupa\ el\ principio\ de\ una\ Cola,\r\nel\ primero\ en\ orden\ de\ insercion\ *
+comment3.params=
+comment3.target=boolean\ esVacia()
+comment3.text=comprueba\ si\ una\ Cola\ esta\ vacia\ *
+numComments=4

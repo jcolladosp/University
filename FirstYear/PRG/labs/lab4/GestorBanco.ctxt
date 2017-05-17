@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=tec
+comment1.target=int\ menu(java.util.Scanner)
+comment1.text=\r\n\ Muestra\ un\ men\u00FA\ de\ opciones\ por\ pantalla\ y\ permite\ \r\n\ que\ el\ usuario\ elija\ una\ de\ ellas.\r\n\ @param\ tec\ Scanner\ para\ realizar\ la\ lectura.\r\n\ @return\ int,\ entero\ que\ representa\ la\ opci\u00F3n\ elegida.\r\n
+comment2.params=tec
+comment2.target=double\ getCantidad(java.util.Scanner)
+comment2.text=\r\n\ Realiza\ la\ lectura\ de\ una\ cantidad\ v\u00E1lida\ (un\ valor\ real\ >\=0).\r\n\ @param\ tec\ Scanner\ para\ realizar\ la\ lectura.\r\n\ @return\ double,\ real\ >\=0\ que\ representa\ la\ cantidad\ le\u00EDda.\r\n
+comment3.params=tec
+comment3.target=int\ getNumCuenta(java.util.Scanner)
+comment3.text=\r\n\ Realiza\ la\ lectura\ de\ un\ n\u00FAmero\ de\ cuenta\ v\u00E1lido\ (un\ valor\ entero\ de\ 5\ d\u00EDgitos).\r\n\ @param\ tec\ Scanner\ para\ realizar\ la\ lectura.\r\n\ @return\ int,\ entero\ de\ 5\ d\u00EDgitos\ que\ representa\ el\ n\u00FAmero\ de\ cuenta\ le\u00EDdo.\r\n
+numComments=4

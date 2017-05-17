@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=stat\ txt\ type\ K\ I\ KI\ CAP
+comment0.target=Log(java.util.Vector,\ javax.swing.JList,\ int,\ int,\ int,\ int,\ int)
+comment1.params=n
+comment1.target=long\ delay(int)
+comment10.params=
+comment10.target=int\ capacity()
+comment2.params=x\ n
+comment2.target=long\ step(int,\ int)
+comment3.params=x
+comment3.target=long\ begin(int)
+comment4.params=x
+comment4.target=long\ end(int)
+comment5.params=x
+comment5.target=long\ swims(int)
+comment6.params=x
+comment6.target=long\ rests(int)
+comment7.params=x
+comment7.target=long\ enterWait(int)
+comment8.params=x
+comment8.target=long\ leaveWait(int)
+comment9.params=
+comment9.target=int\ maxKI()
+numComments=11

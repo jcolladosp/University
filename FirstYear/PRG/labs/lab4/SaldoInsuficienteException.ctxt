@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=mensaje
+comment0.target=SaldoInsuficienteException(java.lang.String)
+comment0.text=\n\ Constructor\ que\ crea\ una\ excepci\u00F3n\ SaldoInsuficienteException\ \n\ con\ un\ mensaje\ dado.\ \n\ @param\ mensaje\ String\ que\ indica\ el\ mensaje\ de\ error.\n
+numComments=1

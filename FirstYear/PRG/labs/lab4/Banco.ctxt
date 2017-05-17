@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Banco()
+comment0.text=\n\ Crea\ un\ banco\ sin\ cuentas\ (puede\ tener\ un\ m\u00E1ximo\ de\ MAX_CUENTAS\ cuentas).\n
+comment1.params=
+comment1.target=int\ getNumCuentas()
+comment1.text=\n\ Consultor\ del\ n\u00FAmero\ actual\ de\ cuentas.\n\ @return\ int,\ n\u00FAmero\ actual\ de\ cuentas.\n
+comment2.params=c
+comment2.target=void\ a\u00F1adir(Cuenta)
+comment2.text=\n\ Permite\ a\u00F1adir\ la\ Cuenta\ c\ al\ banco.\ Si\ el\ banco\ est\u00E1\ completo,\n\ duplica\ el\ n\u00FAmero\ de\ cuentas\ que\ pueden\ haber\ en\ el\ banco.\n\ @param\ c\ Cuenta\ a\ a\u00F1adir.\n
+comment3.params=
+comment3.target=void\ duplica()
+comment3.text=\n\ Duplica\ el\ tama\u00F1o\ del\ array\ cuentas.\n
+comment4.params=n
+comment4.target=Cuenta\ getCuenta(int)
+comment4.text=\n\ Devuelve\ la\ cuenta\ con\ n\u00FAmero\ de\ cuenta\ n.\n\ Si\ tal\ cuenta\ no\ existe,\ devuelve\ null.\n\ @param\ n\ int\ que\ indica\ el\ n\u00FAmero\ de\ cuenta.\n\ @return\ Cuenta,\ la\ cuenta\ resultado.\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\n\ Devuelve\ una\ String\ con\ toda\ la\ informaci\u00F3n\ del\ banco.\n\ El\ formato\ es\ una\ cuenta\ por\ l\u00EDnea.\n\ @return\ String.\n
+numComments=6

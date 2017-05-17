@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=id\ p
+comment0.target=Kid(int,\ Pool)
+comment1.params=id
+comment1.target=void\ swims(int)
+comment2.params=id
+comment2.target=void\ rests(int)
+numComments=3

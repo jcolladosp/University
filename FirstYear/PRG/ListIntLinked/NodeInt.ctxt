@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=value
+comment0.target=NodeInt(int)
+comment1.params=value\ next
+comment1.target=NodeInt(int,\ linear.NodeInt)
+comment2.params=previous\ value\ next
+comment2.target=NodeInt(linear.NodeInt,\ int,\ linear.NodeInt)
+comment3.params=
+comment3.target=int\ getValue()
+comment4.params=value
+comment4.target=void\ setValue(int)
+comment5.params=
+comment5.target=linear.NodeInt\ getNext()
+comment6.params=
+comment6.target=linear.NodeInt\ getPrevious()
+comment7.params=next
+comment7.target=void\ setNext(linear.NodeInt)
+comment8.params=previous
+comment8.target=void\ setPrevious(linear.NodeInt)
+numComments=9

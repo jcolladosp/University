@@ -1,0 +1,73 @@
+fmod BATTERY-MAUDE is
+    sorts Cell ECell Battery EBattery .
+
+    subsorts ECell < Cell < Battery .
+    subsorts ECell < EBattery < Battery .
+
+    op o : -> Cell .
+    op + : -> Cell .
+    op - : -> ECell .
+    op nil : -> EBattery .
+    op _^_ : EBattery EBattery -> EBattery [assoc id: nil] .
+    op _^_ : Battery Battery -> Battery [assoc id: nil] .
+    op consume : Battery -> Battery .
+
+    var Bt : Battery . var EBt : EBattery .
+
+    eq consume(EBt ^ o ^ Bt) = EBt ^ + ^ Bt .
+    eq consume(EBt ^ + ^ Bt) = EBt ^ - ^ Bt .
+    eq consume(Bt) = Bt [owise] .
+endfm
+
+fmod BATTERY-EXT is
+	protecting BATTERY-MAUDE .
+	protecting BOOL .
+	protecting NAT .
+
+	op charge : Battery -> Nat .
+
+	var EBt : EBattery .
+	var Bt : Battery .
+
+	eq charge(EBt) = 0 .
+	eq charge(EBt ^ o ^ Bt) = 100 + charge(Bt) .
+	eq charge(EBt ^ + ^ Bt) = 50 + charge(Bt) .
+endfm
+
+mod BATTERY-ALL is
+    protecting BATTERY-EXT .
+    protecting NAT .
+    protecting BOOL .
+
+
+    op size : Battery -> Nat .
+    op half-charge? : Battery -> Bool .
+    op consume-all : Battery -> Battery .
+
+	var Cll : Cell .
+    var Bt : Battery .
+
+    var FirstBt : Battery .
+    var SecondBt : Battery .
+    var EBt : EBattery .
+
+
+    --- Ejercio 1 (size)
+	eq size(Cll ^ Bt) = 1 + size(Bt) .
+    eq size(nil) = 0 .
+
+    --- Ejercio 2 (half-charge?)
+    ceq half-charge?(Bt) = true if charge(Bt) quo size(Bt) >= 50 .
+    eq half-charge?(Bt) = false [owise] .
+
+    --- Ejercicio 3 (consume-all)
+    rl consume-all(FirstBt ^ o ^ SecondBt) => consume-all(FirstBt ^ + ^ SecondBt) .
+    rl consume-all(FirstBt ^ + ^ SecondBt) => consume-all(FirstBt ^ - ^ SecondBt) .
+    eq consume-all(EBt) = EBt .
+
+
+
+endm
+
+
+

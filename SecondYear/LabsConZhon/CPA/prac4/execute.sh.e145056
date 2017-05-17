@@ -1,0 +1,14 @@
+[kahan06:20487] *** Process received signal ***
+[kahan06:20487] Signal: Segmentation fault (11)
+[kahan06:20487] Signal code: Address not mapped (1)
+[kahan06:20487] Failing at address: (nil)
+[kahan06:20487] [ 0] /lib64/libpthread.so.0(+0xf710) [0x7fcac072f710]
+[kahan06:20487] [ 1] /lib64/libc.so.6(+0x371b2) [0x7fcac03bf1b2]
+[kahan06:20487] [ 2] /lib64/libc.so.6(atoi+0x10) [0x7fcac03bbf60]
+[kahan06:20487] [ 3] ./sis(main+0x65) [0x4017b7]
+[kahan06:20487] [ 4] /lib64/libc.so.6(__libc_start_main+0xfd) [0x7fcac03a6d1d]
+[kahan06:20487] [ 5] ./sis() [0x400c79]
+[kahan06:20487] *** End of error message ***
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 0 with PID 20487 on node kahan06 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=s\ delay
+comment0.target=void\ simulate(java.lang.String,\ int)
+comment1.params=
+comment1.target=PPhilo()
+comment2.params=e
+comment2.target=void\ valueChanged(javax.swing.event.ListSelectionEvent)
+comment3.params=v\ i\ def\ a\ b
+comment3.target=int\ integer(java.lang.String[],\ int,\ int,\ int,\ int)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+comment5.params=e
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=6

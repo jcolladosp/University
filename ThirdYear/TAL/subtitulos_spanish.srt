@@ -1,0 +1,713 @@
+﻿1
+00:00:00,000 --> 00:00:05,170
+[ruido]. Hoy vamos a dar algunas indicaciones
+sobre que son las expresiones regulares
+
+2
+00:00:05,170 --> 00:00:10,340
+usadas en practica. Voy a mencionar
+algunas de las extensiones que se encuentran en
+
+3
+00:00:10,340 --> 00:00:15,390
+varios comandos de Unix. También hablaré
+sobre algunos detalles de algoritmos de
+
+4
+00:00:15,390 --> 00:00:20,230
+pruebas de procesamiento, y centrarse en
+tares de análisis léxicos importantes. Esa
+
+5
+00:00:20,230 --> 00:00:25,800
+parte de un compilador que mira al programa
+entero siendo compilado, y lo rompe en
+
+6
+00:00:25,800 --> 00:00:30,850
+toquens, que son secuencias de caracteres que lógicamente pertenecen juntas.
+
+7
+00:00:30,850 --> 00:00:35,890
+Muchos sistemas usan expresiones regulares de algun tipo para describir patrones. A menudo
+
+8
+00:00:35,890 --> 00:00:41,390
+estos estan incrustados en el codigo propiedad de la compañia pero tambien hay algunos bastante
+
+9
+00:00:41,390 --> 00:00:46,170
+visibles como el numero de comandos de UNIX. Os voy a contar una
+
+10
+00:00:46,170 --> 00:00:51,480
+historia particular involucrando software propietario antes de ir a las generalidades
+
+11
+00:00:51,480 --> 00:00:56,720
+con respecto a procesamiento de texto. Junglee fue una startup fundada por tres
+
+12
+00:00:56,720 --> 00:01:01,880
+estudiantes míos de PHD y otros dos en 1994. En ese tiempo, la web era muy nueva, y ellos
+
+13
+00:01:01,880 --> 00:01:06,210
+tuvieron la idea de construir sistemas web integrados en paginas dentro de productos
+
+14
+00:01:06,210 --> 00:01:10,880
+utiles, y haciendo esto durante dos años fue cuanto consigueron un contrato de
+
+15
+00:01:10,880 --> 00:01:15,800
+Yahoo para construir un servicio que permitiese a los visitantes de Yahoo buscar libros y obtener
+
+16
+00:01:15,800 --> 00:01:20,540
+una lista que diese el precio, las tasas de envio y el tiempo de envio en diferentes
+
+17
+00:01:20,540 --> 00:01:25,400
+vendedores de libros. Inmediatamente tras el despliegue del producto, Amazon compró Junglee
+
+18
+00:01:25,400 --> 00:01:30,020
+para parar la comparación entre tiendas. Curiosamente, Amazon
+
+19
+00:01:30,020 --> 00:01:34,730
+no entendió que yo compraba en su web no porque fueran los más baratos, si no
+
+20
+00:01:34,730 --> 00:01:39,050
+porque estaba seguro de que ellos siempre me enviarian lo que yo buscaba y llegaria
+
+21
+00:01:39,050 --> 00:01:43,370
+a tiempo. Y aparentemente, no era el unico que lo pensaba. Pero el mundo de la compra online
+
+22
+00:01:43,370 --> 00:01:47,900
+era nuevo, y Amazon no podia estar seguro del impacto de la comparación automatica
+
+23
+00:01:47,900 --> 00:01:51,730
+de tiendas. Una hecho interesante fue que a Amazon le salió rentable
+
+24
+00:01:51,730 --> 00:01:55,830
+Junglee, porque uno de sus fundadores, Anand Rajaraman, mientras estaba en Amazon, fue el
+
+25
+00:01:55,830 --> 00:02:00,210
+inventor de Mechanical Turk. Pero el primer trabajo pagado que tuvo Junglee fue
+
+26
+00:02:00,210 --> 00:02:04,470
+un contrato del Washington Post para producir una tabla online de oportunidades
+
+27
+00:02:04,470 --> 00:02:09,530
+de trabajo ofrecidas por compañias que estaban poniendo anuncios impresos
+
+28
+00:02:09,530 --> 00:02:14,920
+en The Post. El trabajo no era facil. Jungle tuvo que ir a cientos de
+
+29
+00:02:14,920 --> 00:02:20,070
+paginas web y extraer la informacion sobre cada trabajo automaticamente. Si lo miras por un lado
+
+30
+00:02:20,070 --> 00:02:24,830
+te puedes imaginar como hacerlo.Aquellos enlaces que tu sigues desde la pagina principal
+
+31
+00:02:24,830 --> 00:02:29,530
+para acceder a paginas de empleo. Y que hay alli. Y como navegar el codigo fuente
+
+32
+00:02:29,530 --> 00:02:33,650
+de un HTML. Para encontrar informacion critica sobre el trabajo como
+
+33
+00:02:33,650 --> 00:02:38,860
+el titulo y el salario. Pero se necesita hacer esto para cada sitio. Y para empeorar las cosas,
+
+34
+00:02:38,860 --> 00:02:43,520
+los chicos de Junglee descubrieron que estos sitios evolucionan. Esto es,
+
+35
+00:02:43,520 --> 00:02:48,300
+que no solo cambien los trabajos, la estructura de la pagina o inculuso la pagina entera
+
+36
+00:02:48,300 --> 00:02:53,390
+cambió. El resultado fue que aproximadamente una vez a la semana, el lector para un sitio web concreto
+
+37
+00:02:53,390 --> 00:02:58,940
+se romperia, y tendria que ser rediseñado. Por eso, los chicos de Junglee desarrollaron un lenguaje
+
+38
+00:02:58,940 --> 00:03:03,300
+de expresiones regulares para describir como navegar una paguna web para extraer
+
+39
+00:03:03,300 --> 00:03:08,110
+la informacion que ellos necesitaban. Los simbolos de entrada eran los tipicos caracteres como letras,
+
+40
+00:03:08,110 --> 00:03:13,460
+asi que ellos podian buscar por palabras importantes como salario. Ellos tambien trataban con etiquetas de HTML
+
+41
+00:03:13,460 --> 00:03:19,290
+como OL. Esto es aquello. Como simbolos de entrada porque ellos daban pistas importantes sobre
+
+42
+00:03:19,290 --> 00:03:25,430
+la estructura de la pagina. Por ejemplo una pagina deberia decir, enviar las condiciones del salario. Pero esto
+
+43
+00:03:25,430 --> 00:03:31,120
+no indica el salario para un trabajo en particular. Pero cuando obtienes una lista
+
+44
+00:03:31,120 --> 00:03:36,660
+de trabajos. Y esto esta indicado en el orden de etiquetas de las listas. Esto es OL. Y
+
+45
+00:03:36,660 --> 00:03:42,800
+solo despues de esto, significa que el numero que sigue es el salario para un trabajo.
+
+46
+00:03:42,800 --> 00:03:48,800
+Otro tipo de elementos de entrada importante es un enlace, que indica que es
+
+47
+00:03:48,800 --> 00:03:54,560
+necesario mover a otra pagina. Una vez este lenguaje de expresiones regulares fue
+
+48
+00:03:54,560 --> 00:03:59,500
+implementado, fue mas fácil escribir expresiones regulares para encontrar información clave
+
+49
+00:03:59,500 --> 00:04:04,440
+como el salario. Y para escribir el código para procesar paginas web directamente. Así pues,
+
+50
+00:04:04,440 --> 00:04:09,570
+hubo un incremento de la productividad cuando añadieron tamaño a su base de datos. Mas aun
+
+51
+00:04:09,570 --> 00:04:14,130
+cuando el sitio cambio. Fue relativamente facil modificar la expresión
+
+52
+00:04:14,130 --> 00:04:20,470
+regular para detectar cambios en el sitio. La arquitectura del sistema
+
+53
+00:04:20,470 --> 00:04:26,220
+desarrollado en Junglee aparece en muchos sitios. El lenguaje de entrada es expresiones regulares
+
+54
+00:04:26,220 --> 00:04:32,120
+mas acciones que son codigos arbitrarios ejecutados cuando la expresion
+
+55
+00:04:32,120 --> 00:04:38,100
+regular es reconocida. En este caso, las acciones deben ser cosas como devolver
+
+56
+00:04:38,100 --> 00:04:44,040
+este entero como salario. La expresion regular es compilada en un DFA, o
+
+57
+00:04:44,040 --> 00:04:49,740
+a veces en un NFA que es simulado, efectivamente ejecutando la version vaga
+
+58
+00:04:49,740 --> 00:04:56,030
+de un subespacio construido necesitado. La simulacion de el DFA o NFA ocurre
+
+59
+00:04:56,030 --> 00:05:00,650
+exactamente como la hemos descrito teoricamente. Cada simbolo de entrada causa
+
+60
+00:05:00,650 --> 00:05:05,390
+un cambio de estado y nada mas. La magia ocurre cuando un estado de aceptacion es
+
+61
+00:05:05,390 --> 00:05:10,070
+alcanzado. Entonces la acción asociada es ejecutada y esta acción permite
+
+62
+00:05:10,070 --> 00:05:15,320
+al procesador de expresiones regulares interactuar con el resto del mundo de una forma
+
+63
+00:05:15,320 --> 00:05:20,180
+util. Ahora estamos hablando de extensiones de Unix para expresiones regulares.
+
+64
+00:05:20,180 --> 00:05:24,920
+Hay muchos comandos en Unix que tienen algun tipo de notación de expresion regular
+
+65
+00:05:24,920 --> 00:05:29,200
+para la introducción del comando. Un ejemplo importante es "grep" que soporta Expresiones Regulares Globales
+
+66
+00:05:29,200 --> 00:05:33,830
+y Imprimir. La mayoría de lenguajes basados en expresiones regulares, aunque
+
+67
+00:05:33,830 --> 00:05:38,450
+tienen extensiones al final de su notacion, hemos cubierto de lejos
+
+68
+00:05:38,450 --> 00:05:43,880
+encontrar un lenguaje regular. También hay algunos comandos que tienen extensiones
+
+69
+00:05:43,880 --> 00:05:48,320
+adicionales, que permite a expresiones no regulares ser reconocidas, pero no vamos
+
+70
+00:05:48,320 --> 00:05:52,640
+a introducirnos en esas caracteristcas. No es coincidencia que
+
+71
+00:05:52,640 --> 00:05:57,730
+las expresiones esten tan presentes en los comandos del Unix original. Antes de que se hiciese Unix,
+
+72
+00:05:57,730 --> 00:06:02,690
+Ken Thompson estuvo trabajando en un sistema para procesar expresiones regulares
+
+73
+00:06:02,690 --> 00:06:07,590
+convirtiendolas en un NFA y simulando el NFA en codigo.
+
+74
+00:06:07,590 --> 00:06:12,430
+Ahora vamos a conocer algunas expresiones regulares de Unix.
+
+75
+00:06:12,430 --> 00:06:17,580
+Tu puedes poner parentesis en cualquier lista de caracteres como una clave para algunos caracteres
+
+76
+00:06:17,580 --> 00:06:25,420
+conectados por el signo de suma en la notación que hemos usado hasta ahora. Tambien puedes describir
+
+77
+00:06:25,420 --> 00:06:32,260
+una secuencia de simbolos que estan consecutivos en el orden ASCII como caracteres
+
+78
+00:06:32,260 --> 00:06:38,530
+dando el primer caracter, un guión y luego el ultimo caracter. Por ejemplo [a-z], esto
+
+79
+00:06:38,530 --> 00:06:44,410
+representa cualquier letra porque las letras minusculas tienen
+
+80
+00:06:44,410 --> 00:06:50,290
+codigos consecutivos es ASCII. Puedes representar cualquier letra poniendo guiones
+
+81
+00:06:50,290 --> 00:06:58,970
+entre la letra minuscula a y la z, y lo mismo para las mayusculas. Vale. Daros cuenta que
+
+82
+00:06:58,970 --> 00:07:03,750
+las letras mayusculas y las minusculas no estan consecutivas en ASCII, entonces tu no puedes
+
+83
+00:07:03,750 --> 00:07:09,500
+representar estos 52 caracteres con un solo rango. De paso, como hemos visto,
+
+84
+00:07:09,500 --> 00:07:16,310
+como corchetes y guiones tienen necesidades especiales, significados en expresiones regulares de Unix.
+
+85
+00:07:16,310 --> 00:07:22,790
+Entonces si quieres usar uno de estos caracteres solo por si mismo, necesitas escribirlo precedido de
+
+86
+00:07:22,790 --> 00:07:29,100
+un \. Por ejemplo \[ es el corchete en si.
+
+87
+00:07:29,100 --> 00:07:36,490
+Si no, seria un corchete para expresar rangos. Y el caracter punto
+
+88
+00:07:36,490 --> 00:07:45,030
+o periodo es un atajo para cualquier caracter. Aqui teneis algunos cambios de Unix para
+
+89
+00:07:45,030 --> 00:07:50,930
+la notacion de las expresiones regulares que hemos aprendido. Vale, el operador de union es realmente
+
+90
+00:07:50,930 --> 00:07:58,540
+representado por la barra vertical | . Pero el simbolo de suma es otro
+
+91
+00:07:58,540 --> 00:08:06,390
+operador como el asterisco, y significa uno o mas. Esto es, en notacion de Unix,
+
+92
+00:08:06,390 --> 00:08:13,730
+E+, que es, un atajo para E concatenado con E*. Asi que por ejemplo,<i></i>
+
+93
+00:08:14,030 --> 00:08:22,880
+[a-z]+ significa una o mas letras en minuscula. El operador de interrogacion
+
+94
+00:08:22,880 --> 00:08:30,810
+tambien se usa como asterisco pero significa cero o mas. El E? es un atajo para E mas
+
+95
+00:08:30,810 --> 00:08:39,420
+epsilon. Asi que por ejemplo, [AB]? significa opcionalmente una A o una B. Nosotros escribiriamos en nuestra
+
+96
+00:08:39,420 --> 00:08:46,470
+notacion original como A + B epsilon. Debeis recordar nuestro ejemplo de DFA
+
+97
+00:08:46,470 --> 00:08:51,910
+para reconocer string que acaban en ing. Esto llevaba mucha explicacion porque hemos
+
+98
+00:08:51,910 --> 00:08:57,220
+considerado donde ir desde cada estado que representa algo de progreso
+
+99
+00:08:57,220 --> 00:09:02,450
+hasta encontrar ing. Aun así, hay una expresion regular para el mismo
+
+100
+00:09:02,450 --> 00:09:08,360
+lenguage usando el punto de Unix,<i>es solo ·ing, asi. O incluso si nosotros</i>
+
+101
+00:09:08,360 --> 00:09:13,730
+no tenemos el punto en nuestra notacion, podemos simplemente remplazarlo por un simbolo de entrada
+
+102
+00:09:13,730 --> 00:09:20,590
+legal conectado por +. De hecho, es mucho mas facil diseñar un NFA para este
+
+103
+00:09:20,590 --> 00:09:26,530
+lenguaje porque es diseñar un DFA. Vale, aqui hay un NFA. Esencialmente, escoge
+
+104
+00:09:26,530 --> 00:09:32,700
+cuando el ha visto la "i" del "ing" final. Asi pues, incluso una entrada como
+
+105
+00:09:32,700 --> 00:09:38,570
+la primera "i" en "skiing", puede permanecer en el estado inicial. Esto es, puede ir desde
+
+106
+00:09:38,570 --> 00:09:44,820
+el estado inicial a si mismo con la "i" si el quiere. Y de hecho, siempre lo hace, porque
+
+107
+00:09:44,820 --> 00:09:52,670
+en el NFA siempre lo hace todo. Vale, puede ir, puede permanecer en el inicial
+
+108
+00:09:52,670 --> 00:09:59,230
+en la pimera "i" y entonces solo viajar a la derecha que es donde esta la segunda "i"
+
+109
+00:09:59,230 --> 00:10:05,950
+No hay necesidad de preocuparse sobre lo que hacer en un estado como el que representa la "i"
+
+110
+00:10:05,950 --> 00:10:12,420
+hasta que descubrimos que la "i" y la "n" donde vayamos si la siguiente entrada no es una "g" no importa
+
+111
+00:10:12,420 --> 00:10:19,780
+porque seguimos estando aqui. Y otra secuencia de estados nos daria
+
+112
+00:10:19,780 --> 00:10:25,840
+donde realmente necesitamos ir. Ahora vamos a hablar un poco sobre analisis lexico,
+
+113
+00:10:25,840 --> 00:10:30,940
+la separación de un programa de entrada en unidades basicas llamadas tokens. Por ejemplo,
+
+114
+00:10:30,940 --> 00:10:36,640
+cada identificador en el programa es un token. Igualmente las palabras reservadas como si o porque
+
+115
+00:10:36,640 --> 00:10:41,650
+son tokens. Muchos caracteres solos son tokens. Normalmente
+
+116
+00:10:41,650 --> 00:10:47,590
+en lenguajes de programacion el punto y coma es un token usado para separar lineas, mas es un
+
+117
+00:10:47,590 --> 00:10:53,470
+token que indica suma, menos que es un token que indica el comparador menos que
+
+118
+00:10:53,470 --> 00:10:59,050
+Tambien hay operadores multicaracter como el menos que
+
+119
+00:10:59,050 --> 00:11:05,560
+o simbolo = que juntos significan menos o igual. Hay
+
+120
+00:11:05,560 --> 00:11:10,460
+herramientas, como Lex, o su versión de codigo libre Flex, que permiten escribir
+
+121
+00:11:10,460 --> 00:11:16,320
+expresiones regulares para cada token. Tambien puedes proporcionar una parte de código como una accion para
+
+122
+00:11:16,320 --> 00:11:21,290
+ser ejecutada, cuando una instancia de una expresión regular es reconocida. Por ejemplo, el
+
+123
+00:11:21,290 --> 00:11:28,140
+codigo para cuando un entero es encontrado debe ser devuelto como entero. Como ejemplo,
+
+124
+00:11:28,140 --> 00:11:36,350
+la expresion para identificadores deberia ser la mostrada aqui. Esto es. Usando la
+
+125
+00:11:36,350 --> 00:11:43,390
+notacion de Unix, esta expresión describe identificadores como cualquier letra, esto es,
+
+126
+00:11:43,390 --> 00:11:50,420
+seguido por un cero o mas letras estrella o digitos. En muchos lenguajes los identificadores
+
+127
+00:11:50,420 --> 00:11:57,100
+permiten alguna opcion mas, por ejemplo, barra baja deberia ser incluida como si fuere
+
+128
+00:11:57,100 --> 00:12:04,090
+otro digito asi que apareceria en esta lista de aqui. Vale, barrabaja. En Lex
+
+129
+00:12:04,090 --> 00:12:09,620
+tu escribes una accción la cual es un codigo arbitrario a ser ejecutado cuando la expresion
+
+130
+00:12:09,620 --> 00:12:15,090
+regular para un token es emparejada. En los casos más simples, todo este codigo devuelve
+
+131
+00:12:15,090 --> 00:12:20,700
+un codigo en forma de entero representado el token encontrado. Pero la accion debe ser
+
+132
+00:12:20,700 --> 00:12:25,750
+mucho mas compliado. Por ejemplo, si un identificador es encontrado, la accion deberia
+
+133
+00:12:25,750 --> 00:12:31,570
+ocasionar instalar ese identificador en la tabla de simbolos donde todos los identificadores usados
+
+134
+00:12:31,570 --> 00:12:36,750
+por el programa son almacenados. Cuando construimos un analizador léxico usando expresiones
+
+135
+00:12:36,750 --> 00:12:43,450
+regulares para los tokens hay algunas resoluciones y ambiguedades que necesitan ser
+
+136
+00:12:43,450 --> 00:12:50,000
+enfrentadas. Vamos a mostrar dos ejemplos. Para uno. Reservar palabras como "si" tambien empareja
+
+137
+00:12:50,000 --> 00:12:56,020
+la expresion para identificadores. Pero "si" no es un identificador legal. Asi que tenemos que
+
+138
+00:12:56,020 --> 00:13:02,040
+asegurarnos que el analizador lexico haga lo correcto en "si". Vale. Para otro
+
+139
+00:13:02,040 --> 00:13:06,760
+cuando nosotros vemos menos que. Nosotros no sabemos inmediatamente si es un token en si mismo
+
+140
+00:13:06,760 --> 00:13:12,060
+o una parte de un token mas lago el cual seria menor o igual que en este caso. Nosotros necesitamos
+
+141
+00:13:12,060 --> 00:13:17,360
+asegurarnos antes de cantar victoria antes de tiempo y volver, menos que, cuando menos
+
+142
+00:13:17,360 --> 00:13:22,390
+que o igual, es intencionado por el programador. Una buena arquitectura para
+
+143
+00:13:22,390 --> 00:13:27,710
+construir un codigo de analisis lexico a partir de una expresion regual es empezar por
+
+144
+00:13:27,710 --> 00:13:34,620
+convertir cada expresion regual en un NFA epsilon. Cada uno de estos NFA epsilon
+
+145
+00:13:34,620 --> 00:13:39,310
+tiene su propio estado final con el que la accion para la expresion regular es
+
+146
+00:13:39,310 --> 00:13:46,360
+asociada. Nosotros combinamos todos esos NFAs epsilon para introducir un nuevo estado. El
+
+147
+00:13:46,360 --> 00:13:53,190
+estado inicial tiene transicion epsilon hacia los estados iniciales de cada NFA. Seria algo
+
+148
+00:13:53,190 --> 00:13:59,630
+como esto. Aqui esta el nuevo estado inicial. Aqui estan todos los estados iniciales viejos
+
+149
+00:13:59,630 --> 00:14:06,100
+y su automata. Y nosotros solo hemos puesto transiciones epsilon a cada uno de
+
+150
+00:14:06,100 --> 00:14:13,150
+ellos. Vale. Todos los estados finales del NFA permanecen finales y tienen sus
+
+151
+00:14:13,150 --> 00:14:20,030
+acciones asociadas. Asi que por ejemplo, estos son, estos son estados finales. Un NFA puede
+
+152
+00:14:20,030 --> 00:14:26,740
+tener diferentes estados finales. Despues de esta combinacion nosotros convertimos un DFA o
+
+153
+00:14:26,740 --> 00:14:31,510
+quizas un NFA sin transiciones epsilon que nosotros simularemos. Vale,
+
+154
+00:14:31,510 --> 00:14:36,390
+necesitamos dar expresiones regulares en orden y ese orden determina
+
+155
+00:14:36,390 --> 00:14:41,110
+la prioridad a traves de acciones. Un orden tipico pone todas las palabras reservadas
+
+156
+00:14:41,110 --> 00:14:46,080
+delante del identificador, de esta forma si el DFA descubre que si el siguiente token es "si",
+
+157
+00:14:46,080 --> 00:14:51,250
+este en principio no sabe si ejecutar la accion para la palabras reservada o
+
+158
+00:14:51,250 --> 00:14:55,730
+si para identificadores o para ambos. Pero el hecho de que "si" tenga prioridad sobre
+
+159
+00:14:55,730 --> 00:15:00,640
+identificadores dice que el token deberia ser tratado como una palabra reservada y no como
+
+160
+00:15:00,640 --> 00:15:05,790
+un identificador. Aunque para hacer todo este trabajo correctamente, la accion del DFA necesita una habilidad
+
+161
+00:15:05,790 --> 00:15:10,530
+especial. La habilidad de coger como entrada un simbolo que es leido y ponerlo al final de
+
+162
+00:15:10,530 --> 00:15:15,190
+en frente la corriente de entrada. Esta entrada será leida otra vez, normalmente la siguiente
+
+163
+00:15:15,190 --> 00:15:21,310
+vez que el analizador lexico es avisado para buscar el siguiente token. Aqui hay
+
+164
+00:15:21,310 --> 00:15:26,810
+un ejemplo de porque la habilidad de restaurar un simbolo de entrada de vuelta al frente
+
+165
+00:15:26,810 --> 00:15:31,980
+de la entrada es importante. Supin que el analizador lexico es avisado para encontrar
+
+166
+00:15:31,980 --> 00:15:36,830
+el siguiente token y el primer caracter que lee es la entrada del simbolo
+
+167
+00:15:36,830 --> 00:15:42,130
+menos que. El tiene que leer la siguiente entrada y si esta entrada es el simbolo igual entonces podemos
+
+168
+00:15:42,130 --> 00:15:48,310
+asegurar que el token es menos o igual que. Pero, si la entrada es cualquier otra cosa,
+
+169
+00:15:48,310 --> 00:15:53,680
+por ejemplo un espacio en blanco, una letra o un digito, entonces el caracter debe ser puesto atras
+
+170
+00:15:53,680 --> 00:16:00,040
+en la entrada como menos que, por si mismo, declarado como token. Otro ejemplo es
+
+171
+00:16:00,040 --> 00:16:06,220
+si el analizador lexico ha ledio el caracter "i" y "f" y esta en busqueda
+
+172
+00:16:06,220 --> 00:16:12,150
+de un token, el deberia haver visto la palabra reservada "si". Pero nosotros no sabremos hasta que no lea el
+
+173
+00:16:12,150 --> 00:16:16,370
+siguiente caracter si este caracter es una letra o un digito, algo que pueda
+
+174
+00:16:16,370 --> 00:16:20,940
+extender el identificador, entonces nosotros no tenemos la palabra reservada "si", tenemos un identificador
+
+175
+00:16:20,940 --> 00:16:25,730
+mas largo. Aun asi, si el siguiente caracter no es uno que pueda extender el identificador
+
+176
+00:16:25,730 --> 00:16:30,240
+como un espacio en blanco o un parentesis, entonces tenemos realmente una palabra reservada
+
+177
+00:16:30,240 --> 00:16:34,870
+"si", en este caso" el siguiente caracteer debe ser empujado de nuevo al frente de la entrada.
+

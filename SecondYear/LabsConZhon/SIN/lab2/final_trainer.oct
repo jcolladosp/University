@@ -1,0 +1,14 @@
+#!/usr/bin/octave -qf
+#Read argument from terminal
+arg_list = argv ();
+addpath(pwd);
+if (size(arg_list) != 4) 
+printf("Wrong arguments - usage -> ./final_trainer.oct namefile beta aplha iterations");
+quit();
+endif
+
+load(arg_list{1});
+[w,E,k]=perceptron(data,str2double(arg_list{2}),str2double(arg_list{3}),str2double(arg_list{4})); [E k]
+save_precision(4);
+save(strcat(arg_list{1},"_w"),"w");
+# filename = corpusname_w

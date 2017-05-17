@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=numVertices
+comment0.target=GrafoPonderado(int)
+comment1.params=ruta
+comment1.target=double\ getPeso(int[])
+numComments=2

@@ -1,0 +1,16 @@
+#!/usr/bin/octave -qf
+#Read argument from terminal
+arg_list = argv ();
+if (size(arg_list) != 2) 
+printf("Wrong arguments - usage -> ./estimation.oct namefile Ete");
+quit();
+endif
+
+load(arg_list{1});
+[N,L]=size(data);
+M=N-round(.7*N); 
+nerr=str2double(arg_list{2}); output_precision(2);
+m=nerr/M
+s=sqrt(m*(1-m)/M)
+r=1.96*s
+printf("I=[%.3f, %.3f]\n",m-r,m+r);

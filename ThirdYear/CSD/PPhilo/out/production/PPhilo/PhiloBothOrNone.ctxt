@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=id\ cycles\ delay\ table
+comment0.target=PhiloBothOrNone(int,\ int,\ int,\ Table)
+numComments=1

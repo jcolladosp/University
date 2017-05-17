@@ -1,0 +1,23 @@
+#!/usr/bin/octave -qf
+
+#Read argument from terminal
+arg_list = argv ();
+if (size(arg_list) != 1) 
+printf("Wrong arguments - usage -> ./effect_both.oct namefile");
+quit();
+endif
+
+load(arg_list{1}); [N,L]=size(data); D=L-1;
+ll=unique(data(:,L)); C=numel(ll);
+rand("seed",23); data=data(randperm(N),:);
+NTr=round(.7*N); M=N-NTr; te=data(NTr+1:N,:);
+a= .0001 ;
+printf("#           b         a    E    k  Ete\n");
+printf("#------------   -------  ---  ---  ---\n");
+for b=[.00000000001 .0000000001 .000000001 .00000001 .0000001 .000001 .00001 .0001 .001 .01 .1 1 10 100 1000]
+[w,E,k]=perceptron(data(1:NTr,:),b,a); rl=zeros(M,1);
+for n=1:M rl(n)=ll(linmach(w,[1 te(n,1:D)]')); end
+[nerr m]=confus(te(:,L),rl);
+printf("%8.11f  %8.4f  %3d  %3d  %3d\n",b,a,E,k,nerr);
+end
+

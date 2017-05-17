@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=doc
+comment0.target=void\ guardarTrabajo(Documento)
+comment0.text=\ Guarda\ un\ trabajo\ en\ la\ cola\ de\ impresion\r\n\ @param\ doc\ \ \ Documento\ a\ imprimir\r\n
+comment1.params=
+comment1.target=boolean\ hayTrabajos()
+comment1.text=\ Consulta\ si\ hay\ trabajos\ a\ imprimir\ en\ la\ cola\ de\ impresion\r\n\ @return\ boolean\ que\ indica\ si\ hay\ trabajos\ pendientes\r\n
+comment2.params=
+comment2.target=Documento\ siguienteTrabajo()
+comment2.text=\ SII\ hayTrabajos()\:\ consulta\ el\ siguiente\ trabajo\ a\ imprimir\r\n\ @return\ Siguiente\ documento\ a\ imprimir\r\n
+comment3.params=
+comment3.target=int\ imprimirSiguiente()
+comment3.text=\ SII\ hayTrabajos()\:\ elimina\ de\ la\ cola\ de\ impresion\ el\ siguiente\r\n\ trabajo\ a\ imprimir.\r\n\ @return\ Duracion\ de\ la\ impresion\ del\ siguiente\ trabajo\ (en\ seg.)\r\n
+numComments=4

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{dfc9811e-1de3-48e6-b6fa-00962f50dd79}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>CaseStudy2016Model</Name>
+    <RootNamespace>CaseStudy2016Model</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Personnel administrator.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Personnel administrator.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Personnel administrator.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UseCaseAdministrator.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCaseAdministrator.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCaseAdministrator.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UseCaseCustomer.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCaseCustomer.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCaseCustomer.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\CaseStudy2016Model.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

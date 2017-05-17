@@ -1,0 +1,5 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\HelloWorldApp\bin\Release\HelloWorldApp.exe.config
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\HelloWorldApp\bin\Release\HelloWorldApp.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\HelloWorldApp\bin\Release\HelloWorldApp.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\HelloWorldApp\obj\Release\HelloWorldApp.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\HelloWorldApp\obj\Release\HelloWorldApp.pdb

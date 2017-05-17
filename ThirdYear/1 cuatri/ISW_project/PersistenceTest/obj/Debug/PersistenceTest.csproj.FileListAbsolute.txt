@@ -1,0 +1,12 @@
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\PersistenceTest.exe.config
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\PersistenceTest.exe
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\PersistenceTest.pdb
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\EntityFramework.dll
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\GestAcaLib.dll
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\GestAcaLib.pdb
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\EntityFramework.xml
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\obj\Debug\PersistenceTest.csprojResolveAssemblyReference.cache
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\obj\Debug\PersistenceTest.exe
+C:\Users\jocolsan\Source\Workspaces\LabProject_Speedcubers\CaseStudy2016App\PersistenceTest\obj\Debug\PersistenceTest.pdb

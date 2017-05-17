@@ -1,0 +1,1386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="35b32cd1-c322-4c02-890b-6a2ac86fda5a"
+  name="CaseStudy2016Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="26b713b9-8772-402b-8e56-f45f1d52974f"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c5bbcc2a-6a4c-477b-a3af-56ea573bfc8c"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Manage the place "
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="bf0318b2-ca1b-4f43-8e8b-cee1327d2e43"
+              LastKnownName="Manage the site"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1fc4d5b6-4431-4a8c-901f-d4b19501005a"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7852792c-fc55-468a-aeee-ae4286babbdc"
+                  name="Manage the place "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="806a39f8-98ec-4c36-9e57-6384bc8141ce"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Manage Students"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="86ff67de-660b-453e-bfad-9b0320033ea9"
+              LastKnownName="Manage Students"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b414b0f4-6907-4afe-84dd-20bb458fc91d"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f82fd8e7-159b-464f-af89-bbe85f0b2553"
+                  name="Manage Students"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bf0318b2-ca1b-4f43-8e8b-cee1327d2e43"
+        name="Manage the site"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="86ff67de-660b-453e-bfad-9b0320033ea9"
+        name="Manage Students"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="012bf9b8-2c33-4905-a050-c94fe7e2fd95"
+        name="Administrator"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="14125cc2-511d-42f1-8444-2bb57ce9f27f"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Update"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="33128ea7-57fa-4b7a-86ff-5e88f01e5f6b"
+              LastKnownName="Update"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="48a8845a-6e9f-40a3-b87f-1f70047cf83a"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e5f36104-5541-4bdd-bca6-89e10e573697"
+                  name="Update"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2950b100-25e3-4820-90a4-d0d32c39a949"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Delelte"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="19fef353-8f17-4033-a7f3-62c9b971bcd5"
+              LastKnownName="Delete"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26ae826f-3939-4be5-9469-5eb908315606"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80518d6f-275f-4523-a078-4f9ffc628049"
+                  name="Delelte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="518b53d3-ec38-465f-8f75-85f3f1abe3e5"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Create"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="556be036-7201-4632-ae85-a29397ab9039"
+              LastKnownName="Create"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="63c67c31-4d91-49bb-911c-29e457b80b7f"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aca0a3e1-1cf1-4862-87e7-9568d1a91424"
+                  name="Create"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="12a44389-aeed-4674-ae35-a23e7e6afece"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Read"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3606808a-cd1a-4984-a670-687b2aa92c05"
+              LastKnownName="Read"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="07101a93-7fe8-4cbb-bc3f-0caa899c5967"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e0b00ff-1c57-4b28-8428-83bd91854868"
+                  name="Read"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="556be036-7201-4632-ae85-a29397ab9039"
+        name="Create"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="7ca12dbe-16d0-4c90-b249-5fe4b1dcf3de"
+            isDerived="false"
+            sourceEndRoleName="Create"
+            targetEndRoleName="Course"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0e181004-0b7e-40e6-a8f3-3b79af4168fe"
+              LastKnownName="Course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4151f95a-eaa2-4e07-bdae-ebd00b15f082"
+                  name="Create"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="abbeddca-8648-4a5a-a238-6a1a28245b3a"
+                  name="Course"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e7920b7e-4f8c-4ddf-8179-2bffa5036f20"
+            isDerived="false"
+            sourceEndRoleName="Create"
+            targetEndRoleName="Site"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6ca94b45-65a5-4c82-b212-b0037a02d879"
+              LastKnownName="Site"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="65d7fe77-ded7-4a63-ae08-c3fb7eb6d440"
+                  name="Create"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da9ba3e5-6790-4266-ab30-b16afe834e51"
+                  name="Site"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3590e873-4417-472f-8175-576820a0c640"
+            isDerived="false"
+            sourceEndRoleName="Create"
+            targetEndRoleName="Teachers"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="95ee0263-d90c-451f-ade8-a2fda489e9b6"
+              LastKnownName="Teachers"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8c4cc8d9-cd04-4c22-bb9c-255b1118434a"
+                  name="Create"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cd870a4c-f53f-4d49-9b0c-a6a7924c27b2"
+                  name="Teachers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="33128ea7-57fa-4b7a-86ff-5e88f01e5f6b"
+        name="Update"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c082c90b-2567-4efa-844d-b019577ba675"
+            isDerived="false"
+            sourceEndRoleName="Update"
+            targetEndRoleName="Course"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="83acff24-98d8-4f62-9169-3e87b0b1eb26"
+              LastKnownName="Course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="47a1d847-aca9-46af-9fda-dc5947aa8b26"
+                  name="Update"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ddde67ca-e73e-4ef3-ace7-7d4056aaeee2"
+                  name="Course"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="974935d7-4fba-459e-8a94-9e5ca2e46917"
+            isDerived="false"
+            sourceEndRoleName="Update"
+            targetEndRoleName="Site"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b47017b8-072a-4a05-b954-5c9926ad44d9"
+              LastKnownName="Site"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="586e7aba-9075-4a72-945d-1d234b9de5ce"
+                  name="Update"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="175c16a2-e44a-45bf-b0de-c51f3ae2e37e"
+                  name="Site"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b85c42e3-7452-43eb-a2dd-da0ae191f3ae"
+            isDerived="false"
+            sourceEndRoleName="Update"
+            targetEndRoleName="Teachers"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d8373918-3133-49a2-8d30-ac6109a7b35e"
+              LastKnownName="Teachers"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6f45412c-1edb-41c5-852a-8cd7178e432c"
+                  name="Update"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6bb96656-40be-4fc4-90c0-fa9049dc1053"
+                  name="Teachers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3606808a-cd1a-4984-a670-687b2aa92c05"
+        name="Read"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4de0e509-df4a-40a2-aa87-775d4b1b29a2"
+            isDerived="false"
+            sourceEndRoleName="Read"
+            targetEndRoleName="Course"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b552f2b0-f0f8-4007-b81c-9e75321f9d40"
+              LastKnownName="Course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="425577c7-077a-4fe7-8384-7cb98cf23787"
+                  name="Read"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7913b20a-a2cd-4e85-af50-7cc8a750b6df"
+                  name="Course"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="821aa722-2ee9-449d-963d-fa5f249b1ed1"
+            isDerived="false"
+            sourceEndRoleName="Read"
+            targetEndRoleName="Site"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f23dc610-cfab-42b7-bc98-8b9cf7ffccde"
+              LastKnownName="Site"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d6c19187-f531-4863-99f9-8f8dce893368"
+                  name="Read"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c8b70251-19fd-462e-be26-5982b0a20733"
+                  name="Site"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d5227b8f-5bf0-444c-aed5-d2669a4f17ee"
+            isDerived="false"
+            sourceEndRoleName="Read"
+            targetEndRoleName="Teachers"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="48c672e5-9dc8-44db-82da-54817e5401d4"
+              LastKnownName="Teachers"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="271b1998-0131-4d19-9078-0b64d4865603"
+                  name="Read"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="688af142-6fb9-4338-99f5-a1f2d6e53fb9"
+                  name="Teachers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="19fef353-8f17-4033-a7f3-62c9b971bcd5"
+        name="Delete"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d9fad5e5-258a-451a-bf03-2c923078011c"
+            isDerived="false"
+            sourceEndRoleName="Delelte"
+            targetEndRoleName="Course"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8f1a8de2-d338-4f81-9611-1e98bcc0f831"
+              LastKnownName="Course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="95697c71-230c-40e3-91a0-968569234700"
+                  name="Delelte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ac1dd2ad-9f1b-476c-8a64-7240f042617a"
+                  name="Course"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bde3eec5-aa94-45f0-abdd-c27cd51ef8fb"
+            isDerived="false"
+            sourceEndRoleName="Delelte"
+            targetEndRoleName="Site"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f8da48e3-4b75-4bb7-ad10-7393c84c4208"
+              LastKnownName="Site"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bbf33a98-11dd-4023-abef-d6bff3449695"
+                  name="Delelte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="53cd61f9-aae3-4184-9d2e-4ea31e3ff2c8"
+                  name="Site"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="784b1d58-9c9f-43e1-8149-7fab94b815ce"
+            isDerived="false"
+            sourceEndRoleName="Delelte"
+            targetEndRoleName="Teachers"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ccf7b067-598f-4af6-9508-a38cccc67864"
+              LastKnownName="Teachers"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="847fde14-8c16-4f0a-9426-b0260aea8a92"
+                  name="Delelte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc14f6d4-cf6c-47d3-b084-60defa949f8c"
+                  name="Teachers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d8373918-3133-49a2-8d30-ac6109a7b35e"
+        name="Teachers"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b47017b8-072a-4a05-b954-5c9926ad44d9"
+        name="Site"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="83acff24-98d8-4f62-9169-3e87b0b1eb26"
+        name="Course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="48c672e5-9dc8-44db-82da-54817e5401d4"
+        name="Teachers"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f23dc610-cfab-42b7-bc98-8b9cf7ffccde"
+        name="Site"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b552f2b0-f0f8-4007-b81c-9e75321f9d40"
+        name="Course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="95ee0263-d90c-451f-ade8-a2fda489e9b6"
+        name="Teachers"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6ca94b45-65a5-4c82-b212-b0037a02d879"
+        name="Site"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0e181004-0b7e-40e6-a8f3-3b79af4168fe"
+        name="Course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ccf7b067-598f-4af6-9508-a38cccc67864"
+        name="Teachers"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f8da48e3-4b75-4bb7-ad10-7393c84c4208"
+        name="Site"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8f1a8de2-d338-4f81-9611-1e98bcc0f831"
+        name="Course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="292f1f4b-889d-443a-839b-6cc2e90c2b77"
+        name="Personnel administration"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="f2b4e0b1-0288-4b4f-9d5a-26bddac4b015"
+            isDerived="false"
+            sourceEndRoleName="Personnel administration"
+            targetEndRoleName="Register student withdrawals"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4f2c5ecb-3d8d-4671-b5fa-46d1774b5764"
+              LastKnownName="Register student withdrawals"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="98e49aa2-e525-4853-81a7-7dea97810cb7"
+                  name="Personnel administration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca981005-348a-4c1a-9a5d-64b89259123c"
+                  name="Register student withdrawals"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="47bbfdbd-929f-4f4b-9d9d-59d3a49f1493"
+            isDerived="false"
+            sourceEndRoleName="Personnel administration"
+            targetEndRoleName="Register student enrollmentss"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c63d4eea-2635-4387-85f2-d25988b5c46c"
+              LastKnownName="Register student enrollmentss"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2f17503f-d60f-4f49-8564-a9f4f0b2282b"
+                  name="Personnel administration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e01b0dfa-ff05-49fb-8a89-4604b4c4c5eb"
+                  name="Register student enrollmentss"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0231d3dc-78a6-4f75-9077-1e50b30a7081"
+            isDerived="false"
+            sourceEndRoleName="Personnel administration"
+            targetEndRoleName="Hire"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ae0ea037-ecc5-48b4-8164-175cf17a467f"
+              LastKnownName="Hire"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6566d4ae-bbf4-476a-bc56-ff1152d6437d"
+                  name="Personnel administration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4ccb1360-96a5-4d7e-aeb9-35869257be67"
+                  name="Hire"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2de5bcba-6524-4737-ada3-d9807445a314"
+            isDerived="false"
+            sourceEndRoleName="Personnel administration"
+            targetEndRoleName="Search"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="293a1fdd-5881-43c3-93cc-b62ce6aedf9d"
+              LastKnownName="Search"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2e54b592-e83b-4904-92f7-6d231378b143"
+                  name="Personnel administration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="47b39376-98bc-4266-bf5e-64d765385873"
+                  name="Search"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ae0ea037-ecc5-48b4-8164-175cf17a467f"
+        name="Hire"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="b066a45d-c6d0-4fc3-8fa4-8d51f09e8114">
+            <useCaseMoniker
+              Id="50792885-dcdf-44a4-80ef-b9d744cb91d1"
+              LastKnownName="Full payment"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="94c02b9c-855e-4f8f-bfe4-51003f50ab0d">
+            <useCaseMoniker
+              Id="b8a05c49-030e-48f4-95cf-891acf858263"
+              LastKnownName="Search courses"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="293a1fdd-5881-43c3-93cc-b62ce6aedf9d"
+        name="Search"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="3b3c1ae4-b1ec-481c-8776-22f24ed89128">
+            <useCaseMoniker
+              Id="af9422e5-58a5-4f41-9961-25cb53b46a77"
+              LastKnownName="List  absences"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="0b52d66a-5e85-402b-bf1f-00a7a89b11d0">
+            <useCaseMoniker
+              Id="c7970d7b-fd9e-46d2-ab42-2a83d9000235"
+              LastKnownName="Teacher schedule"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="591993be-a1df-49a4-9344-71795be3d1fb">
+            <useCaseMoniker
+              Id="4cbb6840-6cb7-4f4c-aa0d-0c9341f38e23"
+              LastKnownName="Classroom schedule"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="7f556fae-18d5-4c1e-b581-975590b95114">
+            <useCaseMoniker
+              Id="9119ac1f-996f-46d6-a19e-e530c4553e4a"
+              LastKnownName="Course students"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="ba22df36-d29b-4084-9bf9-809a51e25511">
+            <useCaseMoniker
+              Id="a5790bce-c792-4dbe-af88-2dc6ed907316"
+              LastKnownName="Student courses"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="a0e9344f-aebf-4786-bbba-238b71964f21">
+            <useCaseMoniker
+              Id="f8e81eda-273b-4232-816f-7c6f32aff6fc"
+              LastKnownName="Student"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="6faeb62b-ba11-4804-904f-9ee10d154352">
+            <useCaseMoniker
+              Id="dcf78e7f-8b81-491d-bd71-04bcbd271462"
+              LastKnownName="Course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c63d4eea-2635-4387-85f2-d25988b5c46c"
+        name="Register student enrollmentss"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="c69eaa51-cca0-4d08-b67b-c5f4d7a1e573">
+            <useCaseMoniker
+              Id="79855ad4-507d-4057-a088-6f9c9f23f5ce"
+              LastKnownName="Full payment"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </extend>
+          <extend
+            Id="29890c07-6147-4428-b04a-acc29ebfef11">
+            <useCaseMoniker
+              Id="bcbccd84-2edc-476f-95f2-3cc8e0d631a2"
+              LastKnownName="Monthly payment"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="d494342e-66fd-42f0-87c9-90fdbce75a90">
+            <useCaseMoniker
+              Id="5ee328a9-c77d-4f20-ba99-3e5355ec9101"
+              LastKnownName="Search course"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+          <include
+            Id="215109c8-6c6a-4787-bebd-d8164f92323e">
+            <useCaseMoniker
+              Id="9c4dd0b9-b6a3-41f3-9581-161f3606ff36"
+              LastKnownName="Search course students"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4f2c5ecb-3d8d-4671-b5fa-46d1774b5764"
+        name="Register student withdrawals"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="0ce73468-9328-4faa-a113-132461a4f845"
+            isDerived="false"
+            sourceEndRoleName="Register student withdrawals"
+            targetEndRoleName="Search student"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="bd6fd2e8-e66b-45d5-a647-3768e225ac4b"
+              LastKnownName="Search student"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f5bfbd6-16e2-4fbd-b55a-c34f5ae4acc4"
+                  name="Register student withdrawals"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67ac81fd-8825-4bac-98cb-46db1efcf713"
+                  name="Search student"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fd5992b3-b177-45ac-b6f9-325a9081e4c8"
+            isDerived="false"
+            sourceEndRoleName="Register student withdrawals"
+            targetEndRoleName="Search student courses"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="17a1ff72-c5eb-4017-a0ac-88670e73a0a8"
+              LastKnownName="Search student courses"
+              LastKnownLocation="CaseStudy2016Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca0a203c-5aa1-402a-8097-874d8c95dc20"
+                  name="Register student withdrawals"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08b5ff93-60eb-4419-8e38-696b218d0bf9"
+                  name="Search student courses"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="17a1ff72-c5eb-4017-a0ac-88670e73a0a8"
+        name="Search student courses"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bd6fd2e8-e66b-45d5-a647-3768e225ac4b"
+        name="Search student"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bcbccd84-2edc-476f-95f2-3cc8e0d631a2"
+        name="Monthly payment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="79855ad4-507d-4057-a088-6f9c9f23f5ce"
+        name="Full payment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9c4dd0b9-b6a3-41f3-9581-161f3606ff36"
+        name="Search course students"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5ee328a9-c77d-4f20-ba99-3e5355ec9101"
+        name="Search course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="af9422e5-58a5-4f41-9961-25cb53b46a77"
+        name="List  absences"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dcf78e7f-8b81-491d-bd71-04bcbd271462"
+        name="Course"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c7970d7b-fd9e-46d2-ab42-2a83d9000235"
+        name="Teacher schedule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4cbb6840-6cb7-4f4c-aa0d-0c9341f38e23"
+        name="Classroom schedule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9119ac1f-996f-46d6-a19e-e530c4553e4a"
+        name="Course students"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a5790bce-c792-4dbe-af88-2dc6ed907316"
+        name="Student courses"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f8e81eda-273b-4232-816f-7c6f32aff6fc"
+        name="Student"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b8a05c49-030e-48f4-95cf-891acf858263"
+        name="Search courses"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="50792885-dcdf-44a4-80ef-b9d744cb91d1"
+        name="Full payment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

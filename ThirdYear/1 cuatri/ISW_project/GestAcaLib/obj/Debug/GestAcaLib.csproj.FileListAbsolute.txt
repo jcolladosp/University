@@ -1,0 +1,10 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\obj\Debug\GestAcaLib.csprojResolveAssemblyReference.cache
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\GestAcaLib.dll.config
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\GestAcaLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\GestAcaLib.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\EntityFramework.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\EntityFramework.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\obj\Debug\GestAcaLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaLib\obj\Debug\GestAcaLib.pdb

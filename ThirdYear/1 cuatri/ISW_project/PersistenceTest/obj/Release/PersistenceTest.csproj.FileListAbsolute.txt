@@ -1,0 +1,12 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\PersistenceTest.exe.config
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\PersistenceTest.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\PersistenceTest.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\EntityFramework.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\GestAcaLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\GestAcaLib.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\EntityFramework.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\obj\Release\PersistenceTest.csprojResolveAssemblyReference.cache
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\obj\Release\PersistenceTest.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\PersistenceTest\obj\Release\PersistenceTest.pdb

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="30688ce6-90cb-4f0d-bb20-31c049a5b60f" name="UMLUseCaseDiagram1" linkedPackageId="ab517e1d-1a85-45da-a8fc-a8d93429e4c0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="53d1e851-a8d5-4540-9286-a5ed3a982a7f" name="Customer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="26b713b9-8772-402b-8e56-f45f1d52974f" />
+        <targetEnds>
+          <association Id="5be9df47-ea83-45e1-bb75-11255f317c8a" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Manage the place " isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c5f93a8b-2de6-4626-9267-eae18d90e344" LastKnownName="Manage the site" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cd10de87-0f3b-4ed1-9820-5d39954de711" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1fc4d5b6-4431-4a8c-901f-d4b19501005a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="859ddc9d-8319-4c4b-9fff-cb2caebce646" name="Manage the place " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7852792c-fc55-468a-aeee-ae4286babbdc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c5bbcc2a-6a4c-477b-a3af-56ea573bfc8c" />
+          </association>
+          <association Id="eff91c6d-2e62-424f-9d12-4d8d1664bd41" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Manage Students" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f6ccecea-1a1b-4632-b4c2-206a59a22d11" LastKnownName="Manage Students" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59cfc70e-ef64-4ae9-83c7-0ce4bcc53cb9" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b414b0f4-6907-4afe-84dd-20bb458fc91d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="afe28de8-3ae8-4ca3-ab81-61c83749b876" name="Manage Students" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f82fd8e7-159b-464f-af89-bbe85f0b2553" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="806a39f8-98ec-4c36-9e57-6384bc8141ce" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c5f93a8b-2de6-4626-9267-eae18d90e344" name="Manage the site" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bf0318b2-ca1b-4f43-8e8b-cee1327d2e43" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f6ccecea-1a1b-4632-b4c2-206a59a22d11" name="Manage Students" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="86ff67de-660b-453e-bfad-9b0320033ea9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="ab517e1d-1a85-45da-a8fc-a8d93429e4c0" name="CaseStudy2016Model">
+    <elementDefinition Id="35b32cd1-c322-4c02-890b-6a2ac86fda5a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="60fa2d04-d001-4e30-a82b-90b6ee0bf0c7">
+        <profileInstance Id="43017a10-2e11-476f-be5c-7bd57f647cba" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="31f41fff-bd94-429f-ae91-91a7007fde73">
+        <profileInstance Id="4af87269-67e6-436e-ac4f-189cee3efe56" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

@@ -1,0 +1,5 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaModelLib\bin\Release\GestAcaModelLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaModelLib\bin\Release\GestAcaModelLib.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaModelLib\obj\Release\GestAcaModelLib.csprojResolveAssemblyReference.cache
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaModelLib\obj\Release\GestAcaModelLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\GestAcaModelLib\obj\Release\GestAcaModelLib.pdb

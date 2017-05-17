@@ -1,0 +1,12 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\BusinessLogicTestApp.exe.config
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\BusinessLogicTestApp.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\BusinessLogicTestApp.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\EntityFramework.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\GestAcaLib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\GestAcaLib.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\EntityFramework.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\obj\Debug\BusinessLogicTestApp.csprojResolveAssemblyReference.cache
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\obj\Debug\BusinessLogicTestApp.exe
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\BusinessLogicTest\obj\Debug\BusinessLogicTestApp.pdb

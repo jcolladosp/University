@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7950c85c-4aaf-449a-af12-48963214c7ed" name="UMLUseCaseDiagram1" linkedPackageId="a986ec7e-e5bf-44cf-8d0b-c7a134bda957" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="918678dd-e23c-4204-b0ff-2d62e7987ec2">
+      <profileInstance Id="8e388c27-55bc-4c47-8f44-d9d33a1ddfc6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1f26eae4-5ddd-48fd-b0b6-12b8a7e73ae6">
+      <profileInstance Id="a50ad5fc-0027-43d4-9917-78b09d16204c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="34816b30-39ba-45ef-9321-6ab94453ecc2" name="Personnel administration" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="292f1f4b-889d-443a-839b-6cc2e90c2b77" />
+        <targetEnds>
+          <association Id="4623a194-bd65-42dd-a310-40df69155ea5" isDerived="false" sourceEndRoleName="Personnel administration" targetEndRoleName="Register student withdrawals" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e32d3c4e-c216-4566-bffe-a19fb2a631e1" LastKnownName="Register student withdrawals" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e56c5699-b2c9-4ba8-8c36-73650d37fe7a" name="Personnel administration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="98e49aa2-e525-4853-81a7-7dea97810cb7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30cfa8db-d6f5-4f88-95c0-f06abff97c7e" name="Register student withdrawals" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ca981005-348a-4c1a-9a5d-64b89259123c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f2b4e0b1-0288-4b4f-9d5a-26bddac4b015" />
+          </association>
+          <association Id="40126096-0c60-4a98-98e8-1f5db84dd1bc" isDerived="false" sourceEndRoleName="Personnel administration" targetEndRoleName="Register student enrollmentss" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="df3cafee-4fa8-4473-977d-f5de493ac5ac" LastKnownName="Register student enrollmentss" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73added2-5ea4-452f-b843-56f26917250f" name="Personnel administration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2f17503f-d60f-4f49-8564-a9f4f0b2282b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aa6f8c01-33db-4f41-9c91-8f357b530014" name="Register student enrollmentss" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e01b0dfa-ff05-49fb-8a89-4604b4c4c5eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="47bbfdbd-929f-4f4b-9d9d-59d3a49f1493" />
+          </association>
+          <association Id="14988d94-d0a6-4aae-9ec3-8b2b051e2d1d" isDerived="false" sourceEndRoleName="Personnel administration" targetEndRoleName="Hire" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4cf02dd9-b034-4ace-ab15-d97b7bede973" LastKnownName="Hire" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b1a88e7-419a-421e-85fa-3b9baffbc077" name="Personnel administration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6566d4ae-bbf4-476a-bc56-ff1152d6437d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="954e2d81-737c-4925-bec0-7d6014bfeb87" name="Hire" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4ccb1360-96a5-4d7e-aeb9-35869257be67" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0231d3dc-78a6-4f75-9077-1e50b30a7081" />
+          </association>
+          <association Id="71ac1487-c2bb-46d1-8b25-269ca4ecd2c4" isDerived="false" sourceEndRoleName="Personnel administration" targetEndRoleName="Search" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f8d331d6-0323-4f66-8251-489b62d338f6" LastKnownName="Search" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d1a84c6b-0795-484c-9936-e0226ea1f174" name="Personnel administration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e54b592-e83b-4904-92f7-6d231378b143" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b65e996-7847-4bc0-b595-26aaa2ff1903" name="Search" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="47b39376-98bc-4266-bf5e-64d765385873" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2de5bcba-6524-4737-ada3-d9807445a314" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4cf02dd9-b034-4ace-ab15-d97b7bede973" name="Hire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae0ea037-ecc5-48b4-8164-175cf17a467f" />
+        <extendedCases>
+          <extend Id="5fb4450c-3116-4aa4-9854-8c2e9ce39e4a">
+            <useCaseMoniker Id="05813cba-2724-4929-b63a-513290395f3d" LastKnownName="Full payment" />
+            <elementDefinition Id="b066a45d-c6d0-4fc3-8fa4-8d51f09e8114" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="51101b5b-9236-42f2-a434-b563997000f3">
+            <useCaseMoniker Id="234b00b6-0feb-4e3b-8f10-3adba9a2901d" LastKnownName="Search courses" />
+            <elementDefinition Id="94c02b9c-855e-4f8f-bfe4-51003f50ab0d" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f8d331d6-0323-4f66-8251-489b62d338f6" name="Search" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="293a1fdd-5881-43c3-93cc-b62ce6aedf9d" />
+        <additions>
+          <include Id="a6db08c4-7586-4e0f-8fcc-d78faa9941f8">
+            <useCaseMoniker Id="9e3ea132-841f-461d-a362-f0d942a02e08" LastKnownName="List  absences" />
+            <elementDefinition Id="3b3c1ae4-b1ec-481c-8776-22f24ed89128" />
+          </include>
+          <include Id="8c5f1bef-a80e-4ecc-be86-87a17b6220b0">
+            <useCaseMoniker Id="d4fdc745-8bc5-4803-96e6-f42cd701b9fa" LastKnownName="Teacher schedule" />
+            <elementDefinition Id="0b52d66a-5e85-402b-bf1f-00a7a89b11d0" />
+          </include>
+          <include Id="ae58389b-fe2c-43a0-a352-a336e90bb8b1">
+            <useCaseMoniker Id="81ab7c74-aea4-403d-9b35-21313f4669e1" LastKnownName="Classroom schedule" />
+            <elementDefinition Id="591993be-a1df-49a4-9344-71795be3d1fb" />
+          </include>
+          <include Id="aee1a959-e53e-485b-aa76-6f42f52a5815">
+            <useCaseMoniker Id="bcb9cb68-cfea-49bb-8bf7-57b145ad9f51" LastKnownName="Course students" />
+            <elementDefinition Id="7f556fae-18d5-4c1e-b581-975590b95114" />
+          </include>
+          <include Id="b6319bff-9739-4f8e-88ef-9f58463cc67e">
+            <useCaseMoniker Id="0df0fc6a-ad9b-446b-b1a2-b4be0a6b8cb9" LastKnownName="Student courses" />
+            <elementDefinition Id="ba22df36-d29b-4084-9bf9-809a51e25511" />
+          </include>
+          <include Id="aa991265-32c3-48c3-a5b9-94c9cbd400ce">
+            <useCaseMoniker Id="0cc01dc4-83fa-476d-bd31-d4391415ac68" LastKnownName="Student" />
+            <elementDefinition Id="a0e9344f-aebf-4786-bbba-238b71964f21" />
+          </include>
+          <include Id="e6f1bd9d-ae1e-47ed-b543-810117c3eb3f">
+            <useCaseMoniker Id="1a69db30-b98a-484f-8770-4d813e0a307e" LastKnownName="Course" />
+            <elementDefinition Id="6faeb62b-ba11-4804-904f-9ee10d154352" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="df3cafee-4fa8-4473-977d-f5de493ac5ac" name="Register student enrollmentss" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c63d4eea-2635-4387-85f2-d25988b5c46c" />
+        <extendedCases>
+          <extend Id="8a3734e8-2cfb-4e16-8e58-05e3e5ab7ddc">
+            <useCaseMoniker Id="1773a486-3d02-4b66-ade9-206fc9f71067" LastKnownName="Full payment" />
+            <elementDefinition Id="c69eaa51-cca0-4d08-b67b-c5f4d7a1e573" />
+          </extend>
+          <extend Id="1dd40d75-c20f-4929-afbf-fc082e73b347">
+            <useCaseMoniker Id="9fa6593f-4e73-40af-b6c8-e3e5a13af62d" LastKnownName="Monthly payment" />
+            <elementDefinition Id="29890c07-6147-4428-b04a-acc29ebfef11" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="316d2d32-f852-4283-8c20-1ad85d3c124b">
+            <useCaseMoniker Id="032ff3e6-64da-43b4-b919-97503f44c06b" LastKnownName="Search course" />
+            <elementDefinition Id="d494342e-66fd-42f0-87c9-90fdbce75a90" />
+          </include>
+          <include Id="0b4aee2b-cf17-4b98-9d20-2aa6bb5199a0">
+            <useCaseMoniker Id="2fe551fe-5d5b-4dc5-8b8a-cd03a3c79f1e" LastKnownName="Search course students" />
+            <elementDefinition Id="215109c8-6c6a-4787-bebd-d8164f92323e" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e32d3c4e-c216-4566-bffe-a19fb2a631e1" name="Register student withdrawals" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4f2c5ecb-3d8d-4671-b5fa-46d1774b5764" />
+        <targetEnds>
+          <association Id="e92563e7-d732-4bdb-8b3e-36379ec5ebd9" isDerived="false" sourceEndRoleName="Register student withdrawals" targetEndRoleName="Search student" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b34a56b8-4fe7-4f82-8e0c-ced33c54e164" LastKnownName="Search student" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0be2cd86-54f6-4f14-8d4d-429468731aef" name="Register student withdrawals" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7f5bfbd6-16e2-4fbd-b55a-c34f5ae4acc4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="10cbb79f-303c-45a9-ab43-ff8cc9407ed7" name="Search student" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="67ac81fd-8825-4bac-98cb-46db1efcf713" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ce73468-9328-4faa-a113-132461a4f845" />
+          </association>
+          <association Id="e5d8ac02-57d6-41d1-8da9-ce7319a0065d" isDerived="false" sourceEndRoleName="Register student withdrawals" targetEndRoleName="Search student courses" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="54e0a770-48f2-4c01-9f42-bd483b257c1f" LastKnownName="Search student courses" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0dbfaca4-243a-4fa7-9e27-641fa5d1040a" name="Register student withdrawals" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ca0a203c-5aa1-402a-8097-874d8c95dc20" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9dd0ac96-1f9e-4be7-b2d1-3ace4cf71a11" name="Search student courses" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="08b5ff93-60eb-4419-8e38-696b218d0bf9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fd5992b3-b177-45ac-b6f9-325a9081e4c8" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="54e0a770-48f2-4c01-9f42-bd483b257c1f" name="Search student courses" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17a1ff72-c5eb-4017-a0ac-88670e73a0a8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b34a56b8-4fe7-4f82-8e0c-ced33c54e164" name="Search student" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bd6fd2e8-e66b-45d5-a647-3768e225ac4b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9fa6593f-4e73-40af-b6c8-e3e5a13af62d" name="Monthly payment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bcbccd84-2edc-476f-95f2-3cc8e0d631a2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1773a486-3d02-4b66-ade9-206fc9f71067" name="Full payment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="79855ad4-507d-4057-a088-6f9c9f23f5ce" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2fe551fe-5d5b-4dc5-8b8a-cd03a3c79f1e" name="Search course students" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9c4dd0b9-b6a3-41f3-9581-161f3606ff36" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="032ff3e6-64da-43b4-b919-97503f44c06b" name="Search course" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ee328a9-c77d-4f20-ba99-3e5355ec9101" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9e3ea132-841f-461d-a362-f0d942a02e08" name="List  absences" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="af9422e5-58a5-4f41-9961-25cb53b46a77" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1a69db30-b98a-484f-8770-4d813e0a307e" name="Course" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dcf78e7f-8b81-491d-bd71-04bcbd271462" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d4fdc745-8bc5-4803-96e6-f42cd701b9fa" name="Teacher schedule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c7970d7b-fd9e-46d2-ab42-2a83d9000235" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="81ab7c74-aea4-403d-9b35-21313f4669e1" name="Classroom schedule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4cbb6840-6cb7-4f4c-aa0d-0c9341f38e23" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bcb9cb68-cfea-49bb-8bf7-57b145ad9f51" name="Course students" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9119ac1f-996f-46d6-a19e-e530c4553e4a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0df0fc6a-ad9b-446b-b1a2-b4be0a6b8cb9" name="Student courses" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a5790bce-c792-4dbe-af88-2dc6ed907316" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0cc01dc4-83fa-476d-bd31-d4391415ac68" name="Student" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f8e81eda-273b-4232-816f-7c6f32aff6fc" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="234b00b6-0feb-4e3b-8f10-3adba9a2901d" name="Search courses" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b8a05c49-030e-48f4-95cf-891acf858263" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="05813cba-2724-4929-b63a-513290395f3d" name="Full payment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="50792885-dcdf-44a4-80ef-b9d744cb91d1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="a986ec7e-e5bf-44cf-8d0b-c7a134bda957" name="CaseStudy2016Model">
+    <elementDefinition Id="35b32cd1-c322-4c02-890b-6a2ac86fda5a" />
+  </package>
+</useCaseModelRoot>

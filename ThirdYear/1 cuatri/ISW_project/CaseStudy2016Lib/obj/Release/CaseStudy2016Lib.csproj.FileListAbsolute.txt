@@ -1,0 +1,5 @@
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\CaseStudy2016Lib\bin\Release\CaseStudy2016Lib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\CaseStudy2016Lib\bin\Release\CaseStudy2016Lib.pdb
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\CaseStudy2016Lib\obj\Release\CaseStudy2016Lib.csprojResolveAssemblyReference.cache
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\CaseStudy2016Lib\obj\Release\CaseStudy2016Lib.dll
+C:\Users\colla\Source\Workspaces\LabProject_Speedcubers3\CaseStudy2016App\CaseStudy2016Lib\obj\Release\CaseStudy2016Lib.pdb

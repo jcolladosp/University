@@ -1,0 +1,123 @@
+Name:                quickspec
+Version:             2
+Cabal-version:       >= 1.6
+Build-type:          Simple
+
+Homepage:            https://github.com/nick8325/quickspec
+Author:              Nick Smallbone
+Maintainer:          nicsma@chalmers.se
+
+License:             BSD3
+License-file:        LICENSE
+Copyright:           2009-2016 Nick Smallbone
+
+Category:            Testing
+
+Synopsis:            Equational laws for free!
+Description:
+  QuickSpec automatically finds equational laws about your program.
+  .
+  Give it an API, i.e. a collection of functions, and it will spit out
+  equations about those functions. For example, given @reverse@, @++@
+  and @[]@, QuickSpec finds six laws, which are exactly the ones you
+  might write by hand:
+  .
+  > xs++[] == xs
+  > []++xs == xs
+  > (xs++ys)++zs == xs++(ys++zs)
+  > reverse [] == []
+  > reverse (reverse xs) == xs
+  > reverse xs++reverse ys == reverse (ys++xs)
+  .
+  The laws that QuickSpec generates are not proved correct, but have
+  passed at least 1000 QuickCheck tests.
+  .
+  For more information, see the @README@ file at
+  https://github.com/nick8325/quickspec/blob/master/README.asciidoc.
+
+Extra-source-files:
+  README.asciidoc
+  examples/Arith.hs
+  examples/Bools.hs
+  examples/Combinators.hs
+  examples/Composition.hs
+  examples/Conditionals.hs
+  examples/ConditionalsPruning.hs
+  examples/Const.hs
+  examples/Geometry.hs
+  examples/HugeLists.hs
+  examples/ListMonad.hs
+  examples/Lists.hs
+  examples/MinMax.hs
+  examples/OctonionsComplicated.hs
+  examples/Octonions.hs
+  examples/Pairs.hs
+  examples/Parsing.hs
+  examples/PrettyPrinting.hs
+  examples/PrettyPrintingModel.hs
+  examples/Process.hs
+  examples/Regex.hs
+  src/errors.h
+
+source-repository head
+  type:     git
+  location: git://github.com/nick8325/quickspec.git
+  branch:   master
+
+flag z3
+  Description: Use the Z3 prover for pruning.
+  Default: False
+
+flag jukebox
+  Description: Use the E and SPASS provers for pruning.
+  Default: True
+
+library
+  -- ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-incomplete-patterns
+  hs-source-dirs: src
+  include-dirs: src
+  Exposed-modules:
+    Paths_quickspec
+    QuickSpec
+    QuickSpec.PredicatesInterface
+    QuickSpec.Eval
+    QuickSpec.Parse
+    QuickSpec.PrintConditionally
+    QuickSpec.Prop
+    QuickSpec.Pruning
+    QuickSpec.Pruning.E
+    QuickSpec.Pruning.Z3
+    QuickSpec.Pruning.Waldmeister
+    QuickSpec.Pruning.Simple
+    QuickSpec.Pruning.Completion
+    QuickSpec.Rules
+    QuickSpec.Signature
+    QuickSpec.Term
+    QuickSpec.Test
+    QuickSpec.TestSet
+    QuickSpec.Type
+    QuickSpec.Utils
+    QuickSpec.Instance
+
+  Build-depends: QuickCheck >= 2.7
+               , base < 5
+               , constraints >= 0.9
+               , containers
+               , dlist
+               , heaps
+               , pretty
+               , process
+               , random
+               , spoon >= 0.2
+               , transformers
+               , twee
+               , uglymemo
+
+  if flag(jukebox)
+    Build-depends: jukebox >= 0.2.17
+  else
+    cpp-options: -DNO_JUKEBOX
+  if flag(z3)
+    Build-depends: z3 >= 4
+  else
+    cpp-options: -DNO_Z3

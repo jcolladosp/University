@@ -1,0 +1,42 @@
+MODULE main
+VAR
+	semaphore : boolean;
+	turno : 0..1;
+	proc1 : process user(semaphore,turno,0);
+	proc2 : process user(semaphore,turno,1);
+ASSIGN
+	init(semaphore) := FALSE;
+SPEC -- safety
+	AG !(proc1.state = critical & proc2.state = critical)
+SPEC -- liveness (proc1)
+	AG (proc1.state = entering -> AF proc1.state = critical)
+SPEC -- liveness (proc2)
+	AG (proc2.state = entering -> AF proc2.state = critical)
+	
+MODULE user(semaphore,turno,id)
+VAR
+	state : {idle,entering,critical,exiting};
+ASSIGN
+	init(state) := idle;
+	next(state) :=
+		case
+			state = idle : {idle,entering};
+			state = entering & !semaphore & turno = id : critical;
+			state = critical : exiting;
+			state = exiting : idle;
+			TRUE : state;
+		esac;
+	next(semaphore) :=
+		case
+			state = entering & !semaphore & turno = id : TRUE;
+			state = exiting : FALSE;
+			TRUE : semaphore;
+		esac;
+	next(turno) :=
+		case
+			turno = 0: 1;
+			turno = 1: 0;
+			TRUE : turno;
+		esac;
+FAIRNESS
+	state = critical

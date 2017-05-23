@@ -1,0 +1,77 @@
+MODULE main
+VAR
+	botones : array 0..3 of boolean;
+	botonesExternos : array 0..3 of boolean;
+	planta : 0..3;
+	direccion : {up,down};
+	puertas : {open, close};
+ASSIGN
+	init(puertas) := close;
+	init(planta) := 0;
+	init(direccion) := up;
+	next(planta) :=
+		case
+			puertas = close & planta < 3 & direccion = up : planta + 1;
+			puertas = close & planta > 0 & direccion = down : planta - 1;
+			TRUE : planta;
+		esac;
+	next(direccion) :=
+		case
+			direccion = up & planta = 3 : down;
+			direccion = down & planta = 0 : up;
+			TRUE : direccion;
+		esac;
+	next(puertas) :=
+		case
+			puertas = close : open;
+			puertas = open : close;
+			TRUE : puertas;
+		esac;
+	next(botones[0]) :=
+		case
+			next(planta) = 0 & next(puertas) = open: FALSE;
+			TRUE : botones[0];
+		esac;
+	next(botones[1]) :=
+		case
+			next(planta) = 1 & next(puertas) = open: FALSE;
+			TRUE : botones[1];
+		esac;
+	next(botones[2]) :=
+		case
+			next(planta) = 2 & next(puertas) = open: FALSE;
+			TRUE : botones[2];
+		esac;
+	next(botones[3]) :=
+		case
+			next(planta) = 3 & next(puertas) = open: FALSE;
+			TRUE : botones[3];
+		esac;
+		next(botonesExternos[0]) :=
+		case
+			next(planta) = 0 & next(puertas) = open: FALSE;
+			TRUE : botonesExternos[0];
+		esac;
+	next(botonesExternos[1]) :=
+		case
+			next(planta) = 1 & next(puertas) = open: FALSE;
+			TRUE : botonesExternos[1];
+		esac;
+	next(botonesExternos[2]) :=
+		case
+			next(planta) = 2 & next(puertas) = open: FALSE;
+			TRUE : botonesExternos[2];
+		esac;
+	next(botonesExternos[3]) :=
+		case
+			next(planta) = 3 & next(puertas) = open: FALSE;
+			TRUE : botonesExternos[3];
+		esac;
+SPEC -- liveness
+	AG (botones[3] = TRUE -> AF botones[3] = FALSE)
+SPEC -- liveness
+	AG (botonesExternos[3] = TRUE -> AF botonesExternos[3] = FALSE)
+SPEC -- safety
+	AG (planta = 0 -> AF planta != 0)
+FAIRNESS
+	puertas = open

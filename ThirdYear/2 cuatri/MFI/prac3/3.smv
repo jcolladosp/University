@@ -1,0 +1,63 @@
+MODULE main
+VAR
+	PA : process sender;
+	PB : process receiver;
+	A2B : process channel(PA.output, PB.input);
+	B2A : process channel(PB.output,PA.input);
+SPEC 
+	AG !(PA.input = error & PA.output = PB.output);
+
+MODULE sender
+VAR
+	data : {0,1};
+	input : {0,1,error};
+	output : {0,1};
+ASSIGN
+	init(data) := 0;
+	init(input) := 1;
+	init(output) := 0;
+	next(data) :=
+		case
+			input = data & (data = 0) : 1;
+			input = data & (data = 1) : 0;
+			TRUE : data;
+		esac;
+	next(output) :=
+		case
+			input = error : output;
+			input = 0 : 0;
+			input = 1 : 1;
+		esac;
+FAIRNESS running
+
+MODULE receiver
+VAR
+	input : {0,1,error};
+	output : {0,1};
+ASSIGN
+	init(input) := 0;
+	init(output) := 1;
+	next(output) :=
+		case
+			input = error : output;
+			input = 0 : 0;
+			input = 1 : 1;
+		esac;
+FAIRNESS running
+
+MODULE channel(input, output)
+VAR
+	fail : 0..1;
+ASSIGN
+	next(fail) :=
+		case
+			fail = 1 : 0;
+			fail = 0 : 1;
+		esac;
+	next(output) :=
+		case
+			next(fail) = 1 : error;
+			next(fail) = 0 : input;
+			TRUE : output;
+		esac;
+FAIRNESS running
